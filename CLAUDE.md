@@ -1,57 +1,38 @@
-# Lab Journal — Project Instructions for Claude Code
+# Lab Journal — Agent Instructions
 
-## What This Is
+Every session that changes code, specs, or design decisions **must** have a journal entry.
 
-A structured lab journal for recording engineering sessions, following Howard M. Kanare's *Writing the Laboratory Notebook* (ACS, 1985) principles. Every session that changes code, specs, or design decisions **must** have a journal entry.
+## Starting a Session
 
-## Core Principles (Kanare)
-
-1. **Permanence.** Entries are append-only. Never delete or rewrite history — add corrections as new entries.
-2. **Immediacy.** Record as you work, not from memory afterward.
-3. **Self-containment.** Each entry must stand alone: enough detail that another person (or future you) could reproduce the session.
-4. **Completeness.** Failures and rollbacks are as important as successes — record both.
-5. **Traceability.** Link to commits, beads, and specs; don't redescribe what git already records.
-
-## Starting a New Entry
-
-1. Copy `lab-journal/TEMPLATE.md` to `lab-journal/journal-YYYY-MM-DD.md`.
-2. Append `b`, `c`, `d`, … for multiple sessions on the same day (e.g., `journal-2026-04-12b.md`).
-3. Fill in the date and session goals **before** you start work.
-4. Add sections as the session progresses — don't backfill.
+1. Copy `lab-journal/TEMPLATE.md` to `lab-journal/journal-YYYY-MM-DD.md` (append `b`, `c`, … for multiple sessions on the same day).
+2. Fill in the date and session goals **before** starting work.
 
 ## During a Session
 
-- Use tables liberally for issues/fixes, test results, comparisons, before/after measurements.
-- Include the **Hypothesis vs Measured Impact** table whenever changes are testable — state your prediction *before* running, then record what actually happened.
+- Add sections as you work — never backfill from memory.
+- Use tables for structured data: issues/fixes, test results, comparisons, before/after measurements.
+- Fill in the **Hypothesis vs Measured Impact** table whenever changes are testable — state predictions *before* running, record actuals after.
 - Include code snippets, error messages, and command output where they aid reproducibility.
+- Record failures and rollbacks — they matter as much as successes.
 - Note tool versions, model names, and environment details that affect results.
 
-## Ending an Entry
+## Ending a Session
 
-Fill in the footer block at the bottom of the template:
+Fill in the footer block at the bottom of the entry:
 
-- **Signed / Date** — always (full ISO timestamp preferred for legal clarity)
-- **Participants & Tools** — model name (from the Co-Authored-By tag in the commit), language version, key libraries/tools
-- **Commit / Witness** — the git commit hash(es) produced in this session + bead IDs
-- **Related Specs / Beads** — active spec versions and bead IDs referenced
-- **Next journal entry** — next file name (or `journal-YYYY-MM-DD.md (use TEMPLATE.md)`)
+- **Signed / Date** — full ISO timestamp
+- **Participants & Tools** — model name, language version, key libraries
+- **Commit / Witness** — git commit hash(es) + issue/bead IDs
+- **Related Specs / Beads** — active spec versions and issue IDs referenced
+- **Next journal entry** — next filename
 
-## After Each Entry Is Committed
+## After Committing
 
-Update `lab-journal/index.md` — add one row to the TOC table with the date, filename, key topics, and milestone/bead. Keep the table sorted chronologically.
+Update `lab-journal/index.md` — add one row with date, file link, key topics, and milestone/phase. Keep the table chronological.
 
-## Index Maintenance
+## Rules
 
-The `index.md` file is the master Table of Contents. It must be:
-- Updated with every new journal entry
-- Sorted chronologically
-- Concise — one row per entry with date, file link, key topics, and milestone/phase
-
-Every quarter, consider generating a PDF snapshot of the entire `lab-journal/` folder (including the index) for immutable long-term storage.
-
-## Format Rules
-
-- **No reconstruction.** If you forgot to log something, add a dated addendum — don't silently insert it into an earlier entry.
-- **Tables over prose** for structured data (test results, issue lists, comparisons).
-- **Relative links** to other journal entries, specs, and project files.
-- **Attachments** go in `lab-journal/attachments/` with date prefixes, linked from the entry.
+- Entries are append-only. Never delete or rewrite. Add dated corrections referencing the original.
+- Each entry must stand alone — enough detail for someone unfamiliar to reproduce the session.
+- Link to commits and issues; don't redescribe what git already records.
+- Attachments go in `lab-journal/attachments/` with date prefixes.
