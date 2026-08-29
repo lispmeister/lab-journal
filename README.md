@@ -2,140 +2,156 @@
 
 ![The Lab](docs/images/the-lab.jpeg)
 
-A structured engineering lab journal adapted from laboratory notebook practices in the physical sciences. Drop it into any project to give AI agents (and humans) a disciplined session-logging workflow.
+A Markdown-first engineering notebook for humans and AI agents, extended with
+optional, expressive HTML plates that open directly from disk.
 
-## Why?
+The Markdown record is always complete. HTML is used when chronology, system
+structure, measurements, sketches, provenance, or corrections deserve more
+visual bandwidth than linear prose can provide.
 
-Software engineering sessions — especially AI-assisted ones — produce a stream of decisions, experiments, failures, and fixes that commit messages alone can't capture. A lab journal provides:
+## What this preserves
 
-- **Reproducibility.** Enough context to re-derive any decision.
-- **Accountability.** Signed, dated, immutable records.
-- **Continuity.** Future sessions (or collaborators) can pick up where you left off.
-- **Learning.** Failures and dead ends are valuable — but only if recorded.
+The original workflow still works:
 
-## Method
+1. Copy a Markdown template.
+2. Record goals before work.
+3. Append observations, decisions, failures, and measurements as they happen.
+4. Sign the entry and update the Markdown index.
 
-This journal follows the principles in:
+No server, generator, framework, package installation, or network connection is
+required to read the journal. A team can use only Markdown forever.
 
-> **Kanare, Howard M.** *Writing the Laboratory Notebook.* Washington, DC: American Chemical Society, 1985. ISBN 978-0-8412-0906-4.
+## What this adds
 
-![Writing the Laboratory Notebook](docs/images/Writing_the_Laboratory_Notebook.jpg)
+- A three-layer protocol: **bench record**, **Markdown synthesis**, and optional
+  **HTML plate**.
+- Stable IDs for entries, observations, hypotheses, figures, artifacts,
+  questions, and corrections.
+- Explicit authors, operators, independent observers, witnesses, capture mode,
+  reconstruction, sensitivity, and artifact provenance.
+- Reading lenses that isolate bench evidence, synthesis, or visual reasoning.
+- A searchable HTML archive alongside the durable Markdown index.
+- Append-only corrective records that visibly preserve superseded claims.
+- A dependency-free validator that checks both forms and the offline contract.
 
-**Permanence.** Entries are append-only. Never delete or rewrite history. Add dated corrections referencing the original.
+Open [`lab-journal/index.html`](lab-journal/index.html) directly to see the
+working notebook.
 
-**Immediacy.** Record as you work, not from memory afterward.
+## Two authoring paths
 
-**Self-containment.** Each entry stands alone. A reader unfamiliar with the project should understand what was attempted, what happened, and what was concluded.
+### Markdown-only
 
-**Completeness.** Record *what happened*, not *what you wish had happened*. A properly recorded failure saves future researchers from repeating it.
+Use this for routine work or whenever prose and tables communicate the evidence
+well. Copy [`lab-journal/TEMPLATE.md`](lab-journal/TEMPLATE.md), create the next
+`journal-YYYY-MM-DD-short-title.md`, and update both indexes. In the HTML index,
+show Markdown and “No HTML plate.”
 
-**Witnessing.** Every entry is signed, dated, and linked to verifiable artifacts (git commits, issue IDs).
+### Markdown plus a rich plate
 
-## Setup — Adding Lab Journal to Your Project
+Use this when a visual relationship materially helps. After the canonical
+Markdown is complete enough to support every claim, copy
+[`lab-journal/PLATE-TEMPLATE.html`](lab-journal/PLATE-TEMPLATE.html) to the same
+basename with `.html`. Select one to three evidence-bearing forms—such as a
+chronology, measured comparison, system map, conjecture/measured sketch pair,
+fault atlas, or corrective diff.
 
-### Step 1: Copy three things into your project
+The plate is authored, not mechanically generated. That keeps the full
+expressiveness of HTML while the Markdown remains the audit record.
 
-```
+## Install in another project
+
+Copy these files and directories:
+
+```text
 your-project/
-├── CLAUDE.md            # paste the agent instructions (step 2) into this file
+├── AGENTS.md or CLAUDE.md
+├── scripts/
+│   └── validate-lab-journal.mjs
 └── lab-journal/
-    ├── index.md         # master table of contents
-    └── TEMPLATE.md      # entry template
+    ├── AUTHORING.md
+    ├── TEMPLATE.md
+    ├── PLATE-TEMPLATE.html
+    ├── index.md
+    ├── index.html
+    ├── assets/
+    │   ├── notebook.css
+    │   └── notebook.js
+    └── attachments/
 ```
 
-From this repo, copy:
+Copy the relevant agent-instruction file from this repository or merge its
+Lab Journal section into an existing instruction file. For a clean notebook,
+remove the live LN-0001 row from both copied indexes, reset their counts, and
+keep the linked specimens only if they help your team.
 
-1. **`lab-journal/TEMPLATE.md`** — the entry template.
-2. **`lab-journal/index.md`** — the master table of contents.
-3. **The agent instructions below** — paste them into your project's `CLAUDE.md`.
+The examples directory is optional. It is valuable when agents need concrete
+visual grammar:
 
-### Step 2: Add agent instructions to your CLAUDE.md
+- [Layered experiment plate](lab-journal/examples/2026-08-30-reply-before-close.html)
+- [Append-only correction plate](lab-journal/examples/2026-09-04-timeout-was-witness.html)
 
-Paste the following block into your project's `CLAUDE.md` file. If the file doesn't exist, create it at the project root. If it already has content, append this block.
+All people, dates, commands, and measurements in those two specimens are
+synthesized and explicitly labeled.
 
-```markdown
-# Lab Journal — Agent Instructions
+## Agent workflow
 
-Every session that changes code, specs, or design decisions **must** have a journal entry.
+Agents are instructed to:
 
-## Starting a Session
+1. Read [`lab-journal/AUTHORING.md`](lab-journal/AUTHORING.md), the template,
+   indexes, previous entry, and related open questions.
+2. Start canonical Markdown before changing code or design.
+3. Preserve event order and separate observation from interpretation.
+4. Record hypotheses and predictions before tests whenever possible.
+5. Link measured and causal claims to durable evidence.
+6. Decide whether HTML materially improves comprehension.
+7. Update both indexes and run validation.
+8. Sign with unresolved questions and witness state made explicit.
 
-1. Copy `lab-journal/TEMPLATE.md` to `lab-journal/journal-YYYY-MM-DD.md` (append `b`, `c`, … for multiple sessions on the same day).
-2. Fill in the date and session goals **before** starting work.
+The complete LLM prompt, epistemic vocabulary, correction protocol, HTML
+constraints, and quality gate live in
+[`lab-journal/AUTHORING.md`](lab-journal/AUTHORING.md).
 
-## During a Session
+## Validate
 
-- Add sections as you work — never backfill from memory.
-- Use tables for structured data: issues/fixes, test results, comparisons, before/after measurements.
-- Fill in the **Hypothesis vs Measured Impact** table whenever changes are testable — state predictions *before* running, record actuals after.
-- Include code snippets, error messages, and command output where they aid reproducibility.
-- Record failures and rollbacks — they matter as much as successes.
-- Note tool versions, model names, and environment details that affect results.
+From the project root:
 
-## Ending a Session
-
-Fill in the footer block at the bottom of the entry:
-
-- **Signed / Date** — full ISO timestamp
-- **Participants & Tools** — model name, language version, key libraries
-- **Commit / Witness** — git commit hash(es) + issue/bead IDs
-- **Related Specs / Beads** — active spec versions and issue IDs referenced
-- **Next journal entry** — next filename
-
-## After Committing
-
-Update `lab-journal/index.md` — add one row with date, file link, key topics, and milestone/phase. Keep the table chronological.
-
-## Rules
-
-- Entries are append-only. Never delete or rewrite. Add dated corrections referencing the original.
-- Each entry must stand alone — enough detail for someone unfamiliar to reproduce the session.
-- Link to commits and issues; don't redescribe what git already records.
-- Attachments go in `lab-journal/attachments/` with date prefixes.
+```sh
+node scripts/validate-lab-journal.mjs
 ```
 
-### Step 3: Customize the template (optional)
+The script uses only Node.js built-ins. It verifies local links, Markdown/HTML
+pairs, index completeness, accessible inline diagrams, layered-plate anatomy,
+and the absence of network-dependent runtime assets. Validation is an authoring
+aid; readers do not need Node.js.
 
-Edit `lab-journal/TEMPLATE.md` to fit your project. Common customizations:
+## Design principles
 
-- Change `lispmeister` in the **Signed** line to your name or team.
-- Replace the example spec references (`CAMBRIAN-SPEC-005`, etc.) with your own.
-- Add project-specific section headings (e.g., `## Benchmark Results`, `## Migration Steps`).
+This system adapts the scientific habits described by Howard M. Kanare in
+*Writing the Laboratory Notebook* and lessons visible in famous historical
+notebooks: keep sequence, distinguish conjecture from measurement, preserve
+drawings as reasoning, name provenance and witnesses, give questions durable
+identities, and correct by addition rather than erasure.
 
-### Step 4: Commit
+The visual language treats the notebook as a serious lab instrument rather than
+a themed blog: paper-like archival surfaces, restrained signal color, precise
+typographic hierarchy, compact evidence ledgers, accessible diagrams, responsive
+layouts, and print-ready closure.
 
-```bash
-git add lab-journal/ CLAUDE.md
-git commit -m "Add lab journal for structured session logging"
-```
+## Repository contents
 
-That's it. The next time an agent (or you) starts a session that changes code, it will create a dated journal entry, log as it works, and update the index.
-
-## What the Agent Does (Summary)
-
-Once configured, the agent follows this workflow each session:
-
-1. **Start** — creates `lab-journal/journal-YYYY-MM-DD.md` from the template, fills in goals.
-2. **Work** — appends observations, decisions, errors, measurements, and code snippets as it goes.
-3. **Test** — fills in the Hypothesis vs Measured Impact table with predictions *before* running and actuals *after*.
-4. **Finish** — signs the entry, records commit hashes, and updates `lab-journal/index.md`.
-
-## Repository Contents
-
-| File | Purpose |
-|------|---------|
-| `lab-journal/TEMPLATE.md` | Entry template — copy this for each session |
-| `lab-journal/index.md` | Master table of contents — one row per entry |
-| `CLAUDE.md` | Agent instructions (also the text to paste into your project) |
-
-## Origin
-
-Developed during the [Cambrian](https://github.com/lispmeister/cambrian) project — a self-reproducing code factory where rigorous session logging proved essential for tracking multi-generation experiments. The format survived 46+ entries and proved its value for AI-assisted engineering.
+| Path | Purpose |
+|---|---|
+| `lab-journal/TEMPLATE.md` | Canonical Markdown entry template |
+| `lab-journal/PLATE-TEMPLATE.html` | Optional same-basename HTML starting point |
+| `lab-journal/AUTHORING.md` | Complete human/LLM protocol |
+| `lab-journal/index.md` | Durable Markdown archive |
+| `lab-journal/index.html` | Searchable, thematic local archive |
+| `lab-journal/assets/` | Shared static visual and interaction system |
+| `lab-journal/examples/` | Synthesized experiment and correction specimens |
+| `scripts/validate-lab-journal.mjs` | Dependency-free integrity checker |
+| `AGENTS.md` / `CLAUDE.md` | Ready-to-use agent instructions |
 
 ## Reference
 
-Kanare, Howard M. *Writing the Laboratory Notebook.* American Chemical Society, 1985.
-
-- The definitive guide to laboratory record-keeping
-- Covers: purpose of notebooks, what to record, format and organization, legal considerations, witnessing, and archival
-- Available from ACS Publications and major booksellers
+Kanare, Howard M. *Writing the Laboratory Notebook.* American Chemical Society,
+1985. ISBN 978-0-8412-0906-4.
