@@ -2,71 +2,30 @@
 
 ![The Lab](docs/images/the-lab.jpeg)
 
-A Markdown-first engineering notebook for humans and AI agents, extended with
-optional, expressive HTML plates that open directly from disk.
+A file-only engineering notebook for humans and AI agents. Markdown preserves
+the complete record; optional HTML plates use the full expressiveness of the web
+when chronology, topology, measurements, sketches, provenance, or corrections
+are easier to understand visually.
 
-The Markdown record is always complete. HTML is used when chronology, system
-structure, measurements, sketches, provenance, or corrections deserve more
-visual bandwidth than linear prose can provide.
+## The whole runtime is a folder
 
-## What this preserves
+Authoring requires no server, generator, framework, package installation,
+validator, network connection, or build step. An agent reads the reporting
+guide and templates, then writes ordinary `.md` and `.html` files directly.
 
-The original workflow still works:
-
-1. Copy a Markdown template.
-2. Record goals before work.
-3. Append observations, decisions, failures, and measurements as they happen.
-4. Sign the entry and update the Markdown index.
-
-No server, generator, framework, package installation, or network connection is
-required to read the journal. A team can use only Markdown forever.
-
-## What this adds
-
-- A three-layer protocol: **bench record**, **Markdown synthesis**, and optional
-  **HTML plate**.
-- Stable IDs for entries, observations, hypotheses, figures, artifacts,
-  questions, and corrections.
-- Explicit authors, operators, independent observers, witnesses, capture mode,
-  reconstruction, sensitivity, and artifact provenance.
-- Reading lenses that isolate bench evidence, synthesis, or visual reasoning.
-- A searchable HTML archive alongside the durable Markdown index.
-- Append-only corrective records that visibly preserve superseded claims.
-- A dependency-free validator that checks both forms and the offline contract.
-
-Open [`lab-journal/index.html`](lab-journal/index.html) directly to see the
-working notebook.
-
-## Two authoring paths
-
-### Markdown-only
-
-Use this for routine work or whenever prose and tables communicate the evidence
-well. Copy [`lab-journal/TEMPLATE.md`](lab-journal/TEMPLATE.md), create the next
-`journal-YYYY-MM-DD-short-title.md`, and update both indexes. In the HTML index,
-show Markdown and “No HTML plate.”
-
-### Markdown plus a rich plate
-
-Use this when a visual relationship materially helps. After the canonical
-Markdown is complete enough to support every claim, copy
-[`lab-journal/PLATE-TEMPLATE.html`](lab-journal/PLATE-TEMPLATE.html) to the same
-basename with `.html`. Select one to three evidence-bearing forms—such as a
-chronology, measured comparison, system map, conjecture/measured sketch pair,
-fault atlas, or corrective diff.
-
-The plate is authored, not mechanically generated. That keeps the full
-expressiveness of HTML while the Markdown remains the audit record.
+The HTML pages use relative local assets, open through `file://`, remain complete
+without JavaScript, and print the full record. Markdown is always canonical and
+must stand alone.
 
 ## Install in another project
 
-Copy these files and directories:
+### 1. Copy the clean notebook
+
+Copy [`starter-kit/lab-journal/`](starter-kit/lab-journal/) into the root of
+your project as `lab-journal/`:
 
 ```text
 your-project/
-├── AGENTS.md or CLAUDE.md
-├── scripts/
-│   └── validate-lab-journal.mjs
 └── lab-journal/
     ├── AUTHORING.md
     ├── TEMPLATE.md
@@ -74,82 +33,121 @@ your-project/
     ├── index.md
     ├── index.html
     ├── assets/
-    │   ├── notebook.css
-    │   └── notebook.js
-    └── attachments/
+    ├── attachments/
+    └── examples/
 ```
 
-Copy the relevant agent-instruction file from this repository or merge its
-Lab Journal section into an existing instruction file. For a clean notebook,
-remove the live LN-0001 row from both copied indexes, reset their counts, and
-keep the linked specimens only if they help your team.
+This is a clean notebook with zero live entries. There is nothing to reset or
+generate.
 
-The examples directory is optional. It is valuable when agents need concrete
-visual grammar:
+### 2. Tell the agent where the protocol lives
 
-- [Layered experiment plate](lab-journal/examples/2026-08-30-reply-before-close.html)
-- [Append-only correction plate](lab-journal/examples/2026-09-04-timeout-was-witness.html)
+Merge one short adapter into the project instructions your environment reads.
+Do not replace existing project instructions.
 
-All people, dates, commands, and measurements in those two specimens are
-synthesized and explicitly labeled.
+- [`AGENTS.md` adapter](starter-kit/agent-instructions/AGENTS.md) for Codex,
+  Grok Build, and other `AGENTS.md` environments.
+- [`CLAUDE.md` adapter](starter-kit/agent-instructions/CLAUDE.md) for Claude Code.
+- [Generic instruction block](starter-kit/agent-instructions/GENERIC.md) for
+  environments with custom project rules.
 
-## Agent workflow
+The adapters deliberately contain only a pointer and the essential trigger.
+The single authoritative protocol remains inside
+`lab-journal/AUTHORING.md`.
 
-Agents are instructed to:
+### 3. Work normally
 
-1. Read [`lab-journal/AUTHORING.md`](lab-journal/AUTHORING.md), the template,
-   indexes, previous entry, and related open questions.
-2. Start canonical Markdown before changing code or design.
-3. Preserve event order and separate observation from interpretation.
-4. Record hypotheses and predictions before tests whenever possible.
-5. Link measured and causal claims to durable evidence.
-6. Decide whether HTML materially improves comprehension.
-7. Update both indexes and run validation.
-8. Sign with unresolved questions and witness state made explicit.
+That is the complete installation. When work changes code, specifications,
+experiments, or design decisions, the agent creates and maintains the record as
+part of the work. No command needs to be installed or run.
 
-The complete LLM prompt, epistemic vocabulary, correction protocol, HTML
-constraints, and quality gate live in
-[`lab-journal/AUTHORING.md`](lab-journal/AUTHORING.md).
+## What the agent does
 
-## Validate
+1. Reads `AUTHORING.md`, the Markdown template, both indexes, the previous
+   entry, and related open questions.
+2. Creates the next canonical Markdown entry before work when chronology allows.
+3. Appends observations, hypotheses, predictions, measurements, failures, and
+   decisions in event order.
+4. Creates a same-basename HTML plate directly from `PLATE-TEMPLATE.html` when a
+   visual relationship materially helps. HTML is authored, not generated from
+   Markdown.
+5. Updates `index.md` and `index.html`, linking Markdown always and HTML only
+   when it exists.
+6. Performs the guide's closing review and signs the record.
 
-From the project root:
+## Two authoring paths
 
-```sh
-node scripts/validate-lab-journal.mjs
-```
+### Markdown only
 
-The script uses only Node.js built-ins. It verifies local links, Markdown/HTML
-pairs, index completeness, accessible inline diagrams, layered-plate anatomy,
-and the absence of network-dependent runtime assets. Validation is an authoring
-aid; readers do not need Node.js.
+Use this for routine work or whenever prose and tables communicate the evidence
+well. Copy `TEMPLATE.md`, author the record, and update both indexes. The HTML
+index links to Markdown and states that no companion plate exists.
 
-## Design principles
+### Markdown plus HTML
 
-This system adapts the scientific habits described by Howard M. Kanare in
-*Writing the Laboratory Notebook* and lessons visible in famous historical
-notebooks: keep sequence, distinguish conjecture from measurement, preserve
-drawings as reasoning, name provenance and witnesses, give questions durable
-identities, and correct by addition rather than erasure.
+Use this for chronology, measured comparison, system maps, conjecture-versus-
+measurement sketches, failure families, annotated evidence, or corrective
+diffs. Copy `PLATE-TEMPLATE.html` to the Markdown entry's basename and select
+one to three evidence-bearing forms.
 
-The visual language treats the notebook as a serious lab instrument rather than
-a themed blog: paper-like archival surfaces, restrained signal color, precise
-typographic hierarchy, compact evidence ledgers, accessible diagrams, responsive
-layouts, and print-ready closure.
+The shared dense bench-sheet language is quiet, compact, responsive, accessible,
+and print-minded. It should feel like a serious laboratory instrument rather
+than a themed blog or presentation deck.
 
-## Repository contents
+## Optional cross-agent skill
 
-| Path | Purpose |
-|---|---|
-| `lab-journal/TEMPLATE.md` | Canonical Markdown entry template |
-| `lab-journal/PLATE-TEMPLATE.html` | Optional same-basename HTML starting point |
-| `lab-journal/AUTHORING.md` | Complete human/LLM protocol |
-| `lab-journal/index.md` | Durable Markdown archive |
-| `lab-journal/index.html` | Searchable, thematic local archive |
-| `lab-journal/assets/` | Shared static visual and interaction system |
-| `lab-journal/examples/` | Synthesized experiment and correction specimens |
-| `scripts/validate-lab-journal.mjs` | Dependency-free integrity checker |
-| `AGENTS.md` / `CLAUDE.md` | Ready-to-use agent instructions |
+[`skills/lab-journal/`](skills/lab-journal/) packages the same workflow as a
+standards-based `SKILL.md` bundle for agent environments that support skills.
+It can initialize the clean static kit or operate an existing notebook using the
+agent's normal file tools. The installed project remains self-contained and does
+not depend on the skill afterward.
+
+The skill is a convenience layer, not the product. Teams that do not use skills
+receive the same notebook behavior from the project instruction adapter.
+
+## What this preserves
+
+The original Markdown workflow from `master` remains intact:
+
+- permanence through append-only entries and explicit corrections;
+- immediacy through contemporaneous field notes;
+- self-contained records that survive changing agents and tools;
+- hypotheses and predictions recorded before measurements;
+- failures and rejected paths retained as evidence;
+- signatures, witnesses, provenance, and durable links.
+
+The richer system adds stable observation, artifact, question, figure, and
+correction IDs; a searchable static HTML index; optional visual plates; and a
+professional shared visual grammar.
+
+## Examples
+
+The starter includes two explicitly synthesized specimens:
+
+- [Layered experiment](starter-kit/lab-journal/examples/2026-08-30-reply-before-close.html)
+  with its [canonical Markdown](starter-kit/lab-journal/examples/2026-08-30-reply-before-close.md).
+- [Append-only correction](starter-kit/lab-journal/examples/2026-09-04-timeout-was-witness.html)
+  with its [canonical Markdown](starter-kit/lab-journal/examples/2026-09-04-timeout-was-witness.md).
+
+## Developing this repository
+
+The npm, Playwright, Chromium, Docker, visual-baseline, accessibility, and static
+validation machinery in this repository is solely for maintainers of the
+templates and shared design language. It is not copied into projects and is not
+part of authoring.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the maintainer setup and release
+gate.
+
+## Repository map
+
+| Path | Audience | Purpose |
+|---|---|---|
+| `starter-kit/` | Notebook users and agents | Clean, ready-to-copy, file-only notebook and instruction adapters |
+| `skills/lab-journal/` | Skill-capable agents | Optional portable adapter with the same clean starter as assets |
+| `lab-journal/` | This repository's maintainers | The project's own live notebook and canonical shared design sources |
+| `CONTRIBUTING.md` | Maintainers | Development dependencies, QA, release, and baseline review |
+| `tests/`, `scripts/`, `package*.json` | Maintainers | Distribution integrity and browser-based quality control |
 
 ## Reference
 

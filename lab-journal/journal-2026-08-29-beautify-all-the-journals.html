@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Implementation record for turning the Markdown-only lab journal into a layered, static notebook system without breaking its original workflow.">
   <title>From journal template to notebook system — LN-0001</title>
-  <link rel="stylesheet" href="assets/notebook.css">
-  <script src="assets/notebook.js" defer></script>
+  <link rel="stylesheet" href="assets/notebook.css?v=6">
+  <script src="assets/notebook.js?v=2" defer></script>
 </head>
 <body>
   <div class="reading-progress" aria-hidden="true"></div>
@@ -22,6 +22,7 @@
         <h1 class="record-title">Markdown kept the authority. HTML gained a laboratory.</h1>
         <p class="record-deck">The original copy–write–sign workflow remains intact. A local visual system, optional companion plate, dual archive, and validator now give agents more expressive range without introducing a reader-side build or server.</p>
         <div class="entry-meta"><span>LN-0001</span><span><time datetime="2026-08-29">29 August 2026</time></span><span>contemporaneous</span><span>witness pending</span></div>
+        <a class="jump-evidence" href="#bench">Jump to first observation <span aria-hidden="true">↓</span></a>
       </header>
 
       <div class="lensbar" aria-label="Record layer filter"><span class="lensbar-label">Reading lens</span><button class="lens-button" type="button" data-layer-filter="all" aria-pressed="true">All layers</button><button class="lens-button" type="button" data-layer-filter="bench" aria-pressed="false">Bench record</button><button class="lens-button" type="button" data-layer-filter="synthesis" aria-pressed="false">Synthesis</button><button class="lens-button" type="button" data-layer-filter="plate" aria-pressed="false">Visual plate</button></div>
@@ -68,7 +69,7 @@ index.md missing local target ...html</div></div><div class="obs-cell"><div clas
       <section class="record-section" id="artifacts" data-journal-section data-record-layer="bench synthesis">
         <span class="layer-mark bench">Implementation manifest</span>
         <div class="section-head"><div><span class="section-label">05 / Artifact manifest</span><h2>The method ships as inspectable files.</h2></div><p class="section-intro">No generated bundle obscures the contract; every authoring and reading artifact is directly inspectable.</p></div>
-        <div class="matrix-wrap"><table><thead><tr><th>ID</th><th>Parent</th><th>Artifact</th><th>Role</th><th>Integrity</th></tr></thead><tbody><tr><td>ART-0001.01</td><td>OBS-0001.02</td><td><a href="TEMPLATE.md">TEMPLATE.md</a> + <a href="PLATE-TEMPLATE.html">PLATE-TEMPLATE.html</a></td><td>Paired authoring surfaces</td><td>Working tree</td></tr><tr><td>ART-0001.02</td><td>OBS-0001.02</td><td><a href="AUTHORING.md">AUTHORING.md</a></td><td>Canonical protocol</td><td>Working tree</td></tr><tr><td>ART-0001.03</td><td>OBS-0001.02</td><td><a href="assets/notebook.css">CSS</a> + <a href="assets/notebook.js">JS</a></td><td>Static visual system</td><td>Working tree</td></tr><tr><td>ART-0001.04</td><td>OBS-0001.03</td><td><a href="../scripts/validate-lab-journal.mjs">validator</a></td><td>Offline/index integrity</td><td>Working tree</td></tr></tbody></table></div>
+        <div class="matrix-wrap scroll-x" role="region" aria-label="Artifact table; scroll horizontally on narrow screens" tabindex="0"><table><thead><tr><th>ID</th><th>Parent</th><th>Artifact</th><th>Role</th><th>Integrity</th></tr></thead><tbody><tr><td>ART-0001.01</td><td>OBS-0001.02</td><td><a href="TEMPLATE.md">TEMPLATE.md</a> + <a href="PLATE-TEMPLATE.html">PLATE-TEMPLATE.html</a></td><td>Paired authoring surfaces</td><td>Working tree</td></tr><tr><td>ART-0001.02</td><td>OBS-0001.02</td><td><a href="AUTHORING.md">AUTHORING.md</a></td><td>Canonical protocol</td><td>Working tree</td></tr><tr><td>ART-0001.03</td><td>OBS-0001.02</td><td><a href="assets/notebook.css">CSS</a> + <a href="assets/notebook.js">JS</a></td><td>Static visual system</td><td>Working tree</td></tr><tr><td>ART-0001.04</td><td>OBS-0001.03</td><td><a href="../scripts/validate-lab-journal.mjs">validator</a></td><td>Offline/index integrity</td><td>Working tree</td></tr></tbody></table></div>
       </section>
 
       <section class="record-section" id="questions" data-journal-section data-record-layer="bench synthesis">

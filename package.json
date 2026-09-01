@@ -1,0 +1,26 @@
+{
+  "name": "lab-journal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "serve:test": "node scripts/serve-static.mjs --port 4173",
+    "test:browsers:install": "playwright install chromium",
+    "sync:distribution": "node scripts/sync-distribution.mjs",
+    "validate:distribution": "node scripts/check-distribution.mjs",
+    "validate:journal": "node scripts/validate-lab-journal.mjs",
+    "test:responsive": "playwright test tests/responsive.spec.mjs tests/interactions.spec.mjs",
+    "test:visual": "playwright test tests/visual.spec.mjs",
+    "test:visual:update": "playwright test tests/visual.spec.mjs --update-snapshots",
+    "test:visual:update:linux": "node scripts/update-linux-snapshots.mjs",
+    "test:a11y": "playwright test tests/accessibility.spec.mjs",
+    "test": "npm run validate:distribution && npm run validate:journal && playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1"
+  }
+}

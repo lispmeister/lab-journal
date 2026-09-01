@@ -26,6 +26,19 @@ function displayPath(path) {
   return normalize(relative(projectRoot, path));
 }
 
+function openingTags(html) {
+  return [...html.matchAll(/<[a-z][^>]*>/gi)].map((match) => match[0]);
+}
+
+function attribute(tag, name) {
+  const match = tag.match(new RegExp(`\\s${name}\\s*=\\s*(["'])(.*?)\\1`, "i"));
+  return match?.[2] ?? null;
+}
+
+function hasClass(tag, name) {
+  return (attribute(tag, "class") ?? "").split(/\s+/).includes(name);
+}
+
 function localTarget(raw, source) {
   const value = raw.split("#")[0].split("?")[0];
   if (!value || /^(?:https?:|mailto:|tel:|data:|javascript:)/i.test(value)) return null;
@@ -98,6 +111,37 @@ for (const htmlFile of htmlFiles) {
     ];
     for (const [pattern, label] of anatomy) {
       if (!pattern.test(html)) failures.push(`${displayPath(htmlFile)}: layered plate is missing ${label}`);
+    }
+
+    const tags = openingTags(html);
+    const evidenceJump = tags.find((tag) => /^<a\b/i.test(tag) && hasClass(tag, "jump-evidence"));
+    if (!evidenceJump) {
+      failures.push(`${displayPath(htmlFile)}: layered plate is missing the .jump-evidence link`);
+    } else if (attribute(evidenceJump, "href") !== "#bench") {
+      failures.push(`${displayPath(htmlFile)}: .jump-evidence must link to #bench`);
+    }
+    if (!/\bid=["']bench["']/i.test(html)) {
+      failures.push(`${displayPath(htmlFile)}: layered plate has no #bench target`);
+    }
+
+    const scrollRegions = tags.filter((tag) => hasClass(tag, "scroll-x"));
+    if (!scrollRegions.length) {
+      failures.push(`${displayPath(htmlFile)}: layered plate has no declared .scroll-x evidence region`);
+    }
+    for (const [index, tag] of scrollRegions.entries()) {
+      const label = attribute(tag, "aria-label");
+      if (!hasClass(tag, "matrix-wrap")) {
+        failures.push(`${displayPath(htmlFile)}: scroll region ${index + 1} must also use .matrix-wrap`);
+      }
+      if (attribute(tag, "role") !== "region") {
+        failures.push(`${displayPath(htmlFile)}: scroll region ${index + 1} must use role="region"`);
+      }
+      if (attribute(tag, "tabindex") !== "0") {
+        failures.push(`${displayPath(htmlFile)}: scroll region ${index + 1} must use tabindex="0"`);
+      }
+      if (!label?.trim()) {
+        failures.push(`${displayPath(htmlFile)}: scroll region ${index + 1} needs a non-empty aria-label`);
+      }
     }
   }
 }
