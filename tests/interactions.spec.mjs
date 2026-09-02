@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { archive, openNotebookPage, plates } from "./notebook-pages.mjs";
+import { archive, openNotebookPage, plates, starterArchive } from "./notebook-pages.mjs";
 
 const mobile = { width: 320, height: 700 };
 const experiment = plates.find(({ name }) => name === "experiment");
@@ -12,6 +12,27 @@ test("archive search filters the catalog", async ({ page }) => {
   await expect(page.locator("[data-catalog-row]:visible")).toContainText("LN–0001");
   await expect(page.locator(".empty-search")).toBeHidden();
 });
+
+for (const definition of [archive, starterArchive]) {
+  test(`${definition.name} mobile focus follows visual reading order`, async ({ page }) => {
+    await openNotebookPage(page, definition, mobile);
+    const positions = await page.locator("main a[href], main input, main button").evaluateAll((elements) =>
+      elements
+        .filter((element) => !element.disabled && element.getClientRects().length)
+        .map((element) => ({
+          label: element.getAttribute("aria-label") || element.textContent.trim(),
+          top: element.getBoundingClientRect().top,
+        })),
+    );
+
+    for (let index = 1; index < positions.length; index += 1) {
+      expect(
+        positions[index].top,
+        `${positions[index].label} must not focus above ${positions[index - 1].label}`,
+      ).toBeGreaterThanOrEqual(positions[index - 1].top - 1);
+    }
+  });
+}
 
 test("every reading lens exposes only its declared layers", async ({ page }) => {
   await openNotebookPage(page, experiment, mobile);

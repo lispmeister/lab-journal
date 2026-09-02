@@ -77,6 +77,8 @@ geometry and interaction failures must be understood independently.
 - The starter opens directly from disk and has zero live records.
 - Portable instructions contain no authoring runtime or QA command.
 - The skill validates and contains no executable dependency.
+- Skill installation paths in README match current host documentation; any
+  unexercised host invocation remains named as an open notebook question.
 - Markdown remains complete without an HTML companion.
 - HTML remains complete without JavaScript or the network.
 - `npm test` passes without snapshot updates.

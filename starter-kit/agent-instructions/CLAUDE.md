@@ -8,3 +8,5 @@ Markdown from `lab-journal/TEMPLATE.md`; create a same-basename HTML plate from
 `lab-journal/PLATE-TEMPLATE.html` only when visual structure materially helps.
 Update both indexes and perform the guide's closing review. Author files directly:
 no server, generator, validator, package installation, or build step is required.
+When this adapter is first installed, make notebook adoption the first live
+entry and mark any earlier installation steps as reconstructed.

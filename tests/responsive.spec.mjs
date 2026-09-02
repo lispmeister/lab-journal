@@ -16,7 +16,7 @@ async function responsiveMetrics(page) {
     const pixels = (element) => Number(getComputedStyle(element).fontSize.replace("px", ""));
     const visibleHeadings = [...document.querySelectorAll("h2:not(.skip-link)")].filter(visible);
     const controls = [...document.querySelectorAll(
-      ".contents a, .jump-evidence, .lens-button, .view-link, [data-catalog-search]",
+      ".brand, .contents a, .jump-evidence, .lens-button, .archive-lens a, .view-link, [data-catalog-search]",
     )].filter(visible);
     const lensbar = document.querySelector(".lensbar");
     const lensRect = rect(lensbar);
@@ -116,8 +116,8 @@ for (const definition of notebookPages) {
     expect(metrics.maxH2).toBeLessThanOrEqual(21);
 
     if (definition.kind === "archive") {
-      expect(metrics.archive.heroTop).toBeLessThan(metrics.archive.lensesTop);
-      expect(metrics.archive.lensesTop).toBeLessThan(metrics.archive.catalogTop);
+      expect(metrics.archive.heroTop).toBeLessThan(metrics.archive.catalogTop);
+      expect(metrics.archive.catalogTop).toBeLessThan(metrics.archive.lensesTop);
     } else {
       expect(metrics.jump.display).toBe("none");
       expect(metrics.lens.scrollWidth).toBe(metrics.lens.clientWidth);

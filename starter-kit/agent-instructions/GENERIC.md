@@ -6,3 +6,5 @@ append-only canonical Markdown record, add a same-basename HTML plate only when
 visual structure materially helps, and update both indexes. Use ordinary file
 operations only; authoring requires no server, generator, validator, package
 installation, or build step.
+When these instructions are first installed, make notebook adoption the first
+live entry and mark any earlier installation steps as reconstructed.

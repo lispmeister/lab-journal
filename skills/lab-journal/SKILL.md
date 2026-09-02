@@ -14,7 +14,10 @@ copy, and edit capabilities; do not introduce an authoring runtime.
   the notebook, copy `assets/starter-kit/lab-journal/` into the project. Merge
   the appropriate block from `assets/starter-kit/agent-instructions/` into an
   existing project-instruction file; never overwrite that file. Stop and report
-  the conflict if a notebook or target file would be replaced.
+  the conflict if a notebook or target file would be replaced. Then follow the
+  installed protocol to create the first live entry documenting notebook
+  adoption and update both indexes. Treat copy and merge steps completed before
+  that entry opened as reconstructed; never invent their timestamps.
 - **Author or continue:** Read the installed `lab-journal/AUTHORING.md`, both
   templates, both indexes, the previous entry, and related open questions. The
   installed protocol is authoritative. Create and update the Markdown and

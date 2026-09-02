@@ -55,11 +55,17 @@ The adapters deliberately contain only a pointer and the essential trigger.
 The single authoritative protocol remains inside
 `lab-journal/AUTHORING.md`.
 
-### 3. Work normally
+### 3. Record notebook adoption
 
-That is the complete installation. When work changes code, specifications,
-experiments, or design decisions, the agent creates and maintains the record as
-part of the work. No command needs to be installed or run.
+The installation changes the project's working protocol, so it should become
+the first live record. Create `LN-0001` from `TEMPLATE.md`, state that the
+notebook was adopted, link the copied protocol and project-instruction change,
+and update both indexes. Mark the copy and adapter steps as reconstructed when
+they happened before the entry was opened; never invent their timestamps.
+
+That completes installation. Subsequent work that changes code, specifications,
+experiments, or design decisions maintains its record as part of the work. No
+command needs to be installed or run.
 
 ## What the agent does
 
@@ -104,6 +110,35 @@ not depend on the skill afterward.
 
 The skill is a convenience layer, not the product. Teams that do not use skills
 receive the same notebook behavior from the project instruction adapter.
+
+### Install the optional skill
+
+Copy the complete `skills/lab-journal/` directory into one discovery location.
+The destination must contain `lab-journal/SKILL.md`, not only the Markdown file.
+
+| Agent host | Project-scoped location | User-scoped location | Invoke or verify |
+|---|---|---|---|
+| Codex | `.agents/skills/lab-journal/` | `~/.agents/skills/lab-journal/` | Mention `$lab-journal`; `/skills` lists discovered skills |
+| Claude Code | `.claude/skills/lab-journal/` | `~/.claude/skills/lab-journal/` | Invoke `/lab-journal` or ask Claude to use the lab-journal skill |
+| Grok Build | `.grok/skills/lab-journal/` | `~/.grok/skills/lab-journal/` | Invoke `/lab-journal`; `grok inspect` reports discovery |
+
+These locations follow the current [Codex skill documentation](https://developers.openai.com/codex/skills),
+[Claude Code skill documentation](https://code.claude.com/docs/en/slash-commands),
+and [Grok Build skill documentation](https://docs.x.ai/build/features/skills-plugins-marketplaces).
+Restart the host if a newly copied skill does not appear.
+
+For a repository installation, check in the skill directory so every agent sees
+the same version. For a personal installation, the skill can initialize many
+projects, but each installed notebook remains independent afterward.
+
+### Verification status
+
+- The exact bundle passes the official structural skill validator.
+- Grok Build 1.0.5 discovered it as a project skill and user-invocable command.
+- Claude Code documents the same open Agent Skills structure; an actual Claude
+  initialization and entry-authoring smoke remains tracked as Q-0008-02.
+- Codex officially scans `.agents/skills` from the working directory to the
+  repository root and supports user skills in `~/.agents/skills`.
 
 ## What this preserves
 

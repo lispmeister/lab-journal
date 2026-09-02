@@ -5,9 +5,9 @@ This is the durable Markdown table of contents. The richer
 thematic lenses. If HTML is unavailable, this file remains the complete route
 into the notebook.
 
-**Last updated:** 2026-09-01
+**Last updated:** 2026-09-02
 
-**Total live entries:** 8
+**Total live entries:** 9
 
 **HTML companion plates:** 1
 
@@ -15,6 +15,7 @@ into the notebook.
 
 | Date | Entry ID / status | Markdown narrative | HTML plate | Key topics | Milestone / phase |
 |---|---|---|---|---|---|
+| 2026-09-01 | LN-0009 · completed, cross-host and hosted-CI observations pending | [Mobile order and agent installation must match their promises](journal-2026-09-01-close-review-gaps.md) | — | source and focus order; target sizes; CSS consolidation; skill installation; Q-0009-01 | pre-merge review corrections |
 | 2026-09-01 | LN-0008 · completed, cross-host discovery pending | [Authoring remains a file operation, not a toolchain](journal-2026-09-01-zero-infrastructure-authoring.md) | — | zero-infrastructure authoring; clean starter; agent adapters; portable skill; Q-0008-01; Q-0008-02 | distribution boundary |
 | 2026-09-01 | LN-0007 · completed automation, hosted CI observation pending | [Responsive behavior becomes an executable notebook contract](journal-2026-09-01-responsive-contract.md) | — | Playwright; responsive contracts; visual regression; accessibility; Q-0007-01; Q-0007-02 | automated assurance |
 | 2026-09-01 | LN-0006 · completed mobile refinement, review pending | [Mobile readers should reach the record before the furniture](journal-2026-09-01-mobile-evidence-first.md) | — | mobile evidence-first; catalog ordering; lens controls; table cues; Q-0006-01 | mobile refinement |
@@ -28,7 +29,7 @@ into the notebook.
 
 ### People and roles
 
-- **Codex:** author and operator for LN-0001 through LN-0007.
+- **Codex:** author and operator for LN-0001 through LN-0009.
 - **Independent witness:** pending user review for LN-0001.
 - **Design-direction review:** user selected option C from LN-0002 in LN-0003.
 - **Instrument-variant witness:** pending user comparison for LN-0003.
@@ -37,6 +38,7 @@ into the notebook.
 - **Mobile evidence-first review:** implementation criteria passed; user review pending for LN-0006.
 - **Responsive-contract implementation:** Codex operator; user authorization; hosted CI observation pending for LN-0007.
 - **Zero-infrastructure distribution:** Codex author/operator; user directed the corrected boundary and authorized implementation in LN-0008.
+- **Pre-merge review corrections:** Codex author/operator; user authorized all fixes and final QA in LN-0009.
 
 ### Systems and instruments
 
@@ -50,9 +52,11 @@ into the notebook.
 - **Mobile evidence-first refinement:** LN-0006 / Q-0006-01.
 - **Automated responsive assurance:** LN-0007 / Q-0007-01.
 - **Static starter, agent adapters, and cross-agent skill:** LN-0008 / Q-0008-01.
+- **Coherent reading order, target contract, and consolidated cascade:** LN-0009 / Q-0009-01.
 
 ### Open questions
 
+- Q-0009-01 was closed by final populated and zero-state direct-file inspection at desktop and mobile sizes plus executable focus-order assertions in LN-0009.
 - Q-0008-02 remains open for an actual Claude Code invocation and initialization smoke; Grok Build 1.0.5 discovered the exact project skill as user-invocable in LN-0008.
 - Q-0008-01 was closed by the isolated file-only Markdown/HTML authorship and index-update smoke in LN-0008.
 - Q-0007-02 remains open until the first hosted GitHub Actions run confirms the locally simulated pinned workflow.

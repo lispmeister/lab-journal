@@ -172,7 +172,7 @@ observation narrows a causal claim without erasing the earlier result.
 ## Static file and link rules
 
 ```text
-lab-notebook/
+lab-journal/
 ├── index.html
 ├── AUTHORING.md
 ├── TEMPLATE.md
@@ -221,7 +221,7 @@ lab-notebook/
 ## Copy/paste prompt for an LLM
 
 ```text
-Create the next append-only lab-notebook entry in this repository.
+Create the next append-only lab-journal entry in this repository.
 
 Read AUTHORING.md, TEMPLATE.md, index.html, the previous entry, related
 open questions, and repository instructions. Create canonical Markdown first.
