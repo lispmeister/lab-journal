@@ -1,10 +1,14 @@
 ## Lab journal
 
-For any session that changes code, specifications, experiments, or design
-decisions, read and follow `lab-journal/AUTHORING.md` before work. Maintain the
-append-only canonical Markdown record, add a same-basename HTML plate only when
-visual structure materially helps, and update both indexes. Use ordinary file
-operations only; authoring requires no server, generator, validator, package
-installation, or build step.
-When these instructions are first installed, make notebook adoption the first
-live entry and mark any earlier installation steps as reconstructed.
+For work that changes code, specifications, experiments, or design decisions,
+read and follow `lab-journal/AUTHORING.md` before acting. Use its start/resume
+rules, choose its compact or full Markdown template, and record evidence and
+predictions as work happens. Mark retrospective capture; never invent missing
+facts, successful checks or witnesses. Preserve signed history through new
+corrections. Add same-basename HTML only when it clarifies evidence.
+
+Update both indexes and complete the guide's applicable closing review. Report
+record links, actual verification and remaining gaps to the user. Authoring
+requires no notebook-specific tools; the project's normal tests still apply.
+When first installed, record notebook adoption as the first live entry and mark
+installation steps that preceded the entry as reconstructed.

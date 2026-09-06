@@ -11,7 +11,7 @@
 |---|---|
 | Entry ID | LN-[NNNN] |
 | Date | YYYY-MM-DD |
-| Opened / closed | [HH:MM TZ] / [HH:MM TZ or open] |
+| Opened / closed | [ISO timestamp + timezone] / [ISO timestamp + timezone or open] |
 | Project / phase | [project] / [phase] |
 | Status | [open / signed / witnessed / correction] |
 | Authors | [name or agent ID — role] |
@@ -19,6 +19,7 @@
 | Independent observer | [name / none / not recorded] |
 | Witness | [name / pending / not required, with reason] |
 | Environment | [hardware, OS, runtime, versions, commit/state] |
+| Artifact location | [relative attachment directory or external retention reference] |
 | Sensitivity / handling | [public / internal / restricted; storage rule] |
 | Capture mode | [contemporaneous / reconstructed / mixed] |
 | Reconstruction sources / gaps | [source IDs and missing facts, or none] |
@@ -40,6 +41,8 @@
 - **[HH:MM TZ]** [next fragment]
 
 ## Bench record
+
+<a id="OBS-NNNN.01"></a>
 
 ### OBS-[NNNN].01 — [short observation name]
 
@@ -63,6 +66,8 @@
 | H-[NNNN].01 | [falsifiable explanation] | [specific expected result] | [change/observation separating alternatives] | [result or pending] | [OBS/ART IDs] | [live / rejected / bounded] |
 
 ## Thinking sketches
+
+<a id="F-NNNN-01"></a>
 
 ### F-[NNNN]-01 — [figure title]
 
@@ -95,11 +100,15 @@ labels explicitly; do not draw inferred events as measured facts.]
 
 ## Artifact manifest
 
+<a id="ART-NNNN.01"></a>
+
 | Artifact ID / path | Parent observation | Captured by / method | Integrity | Sensitivity | Notes |
 |---|---|---|---|---|---|
-| ART-[NNNN].01 · `[relative/path]` | OBS-[NNNN].01 | [name/instrument + method] | [checksum / immutable commit / not computed] | [handling] | [scope, omissions] |
+| ART-[NNNN].01 · `[relative/path; replace with a real Markdown link or inline evidence]` | OBS-[NNNN].01 | [name/instrument + method] | [checksum / immutable commit / not computed] | [handling] | [retained / excerpt / external / unavailable; scope, omissions] |
 
 ## Open-question ledger
+
+<a id="Q-NNNN-01"></a>
 
 | Question ID | Question | Owner | Next discriminating action | Status | Closed/superseded by |
 |---|---|---|---|---|---|
@@ -118,6 +127,8 @@ labels explicitly; do not draw inferred events as measured facts.]
 **Bounded conclusion.** [What the record supports—no more.]
 
 **Still unresolved.** [Question IDs, or none.]
+
+**Verification performed / limitations.** [Checks and actual outcomes; not checked or not applicable with reasons; evidence IDs.]
 
 **Signed by / at.** [name or agent ID / ISO timestamp / method]
 

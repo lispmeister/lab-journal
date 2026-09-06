@@ -54,3 +54,15 @@ belong only to the synthesized design specimens.
 Periodically snapshot the complete `lab-journal/` directory in the project's
 normal archival system. Preserve both Markdown and companion HTML; neither form
 replaces the other.
+
+## Routine example
+
+[Compact Markdown-only repair](examples/2026-09-06-routine-link-fix.md) · synthesized specimen.
+Use [COMPACT-TEMPLATE.md](COMPACT-TEMPLATE.md) for bounded routine work.
+
+
+## Current full-format reference
+
+[LN-0251: current full-format correction](examples/2026-09-06-instrumentation-scope-correction.md).
+The older experiment/correction pair is historical specimen content with dated
+amendments; use the current reference for new full records.

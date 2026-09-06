@@ -23,7 +23,7 @@ npm ci
 npm run test:browsers:install
 ```
 
-The second command downloads the pinned Chromium build once. CI uses the
+The second command downloads the pinned Chromium, Firefox, and WebKit builds once. CI uses the
 matching official Playwright container.
 
 ## Distribution synchronization
@@ -53,10 +53,24 @@ The gate runs:
 
 1. Distribution integrity and zero-infrastructure contract checks.
 2. Static validation of this repository's live notebook.
-3. Responsive geometry and interaction contracts.
+3. The reader-task, real-content and print-control suites in Chromium, Firefox and WebKit.
+   The exhaustive geometry matrix and visual baselines run in Chromium.
 4. JavaScript-off, offline-resource, and print-completeness checks.
 5. Reviewed Chromium visual baselines.
-6. Automated WCAG A/AA scans.
+6. Chromium automated WCAG A/AA scans for both archives, every template/live/example
+   plate, and the three real-content reading samples. This is automated coverage,
+   not a claim of a complete manual accessibility audit.
+
+After changes to print layout, export both specimens through browser print, render
+the PDFs, and inspect page breaks, evidence labels, tables and closure. Screen
+geometry alone does not verify pagination. Retain decision-critical screenshots
+and validation summaries in the live journal attachments, not only temporary paths.
+
+Print-control tests distinguish a request, fallback instructions, and native
+print lifecycle events. The native headless event check is Chromium-only;
+Firefox/WebKit run the control/fallback checks. A lifecycle event is not proof
+that an OS dialog opened or a reader saved a PDF. Check embedded-browser feedback
+visually, and keep saved-PDF links explicitly labelled as snapshots.
 
 Focused commands are available in `package.json`.
 

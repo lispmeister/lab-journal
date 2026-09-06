@@ -1,0 +1,254 @@
+[
+  {
+    "path": "CONTRIBUTING.md",
+    "sha256": "aceeeead02d341bc21171388e6805b731fae8516e8878de58ecc9a95e630cd8f",
+    "bytes": 2868,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "README.md",
+    "sha256": "e56d1a2c311f8c296c052d43d8860687f7b044b567a8b9a9cc4de7f34210d664",
+    "bytes": 8485,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/AUTHORING.md",
+    "sha256": "189cf4c771dda5eedf4eaf121cbc3631689d9c9eae1d25614a6d420aeba46025",
+    "bytes": 15134,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/PLATE-TEMPLATE.html",
+    "sha256": "0882b9604946f7dade84d26f7179fe72729b79941aa837ba864e6bd08f32966a",
+    "bytes": 11230,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/TEMPLATE.md",
+    "sha256": "185702c74af794421ba0781358f20b4bfdd52c5e7efabc57fc3ae6f058995a4a",
+    "bytes": 5086,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/assets/notebook.css",
+    "sha256": "a30ecde9644e46a3c7e0e71350fff2263be6f27c29965151c9cc774f534eb383",
+    "bytes": 35584,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/assets/notebook.js",
+    "sha256": "b660f80c17b6f58e16f3c8bb05e8e3d14b527b2a1b9ac14ce138852c205eab89",
+    "bytes": 2981,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/attachments/2026-08-30-stop-ordering.csv",
+    "sha256": "99ba997b14fdaa820181162c27916fb804bc18c829633a447ae875d3f946a9d1",
+    "bytes": 248,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/attachments/2026-08-30-stop-trace.txt",
+    "sha256": "c146cd7680e983c395b05bf131c27657608561418021f7f902a9023b6324e65d",
+    "bytes": 338,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/attachments/2026-09-01-zero-infrastructure-smoke-mobile.png",
+    "sha256": "b42e568e1af13e23c2789f80c6fb00897e67abf291bd977fc30439a83d8edd3f",
+    "bytes": 132167,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/attachments/2026-09-04-external-observer.csv",
+    "sha256": "361ef04fc2537930eeaf9ee1007673e91f4de0d5bb72575b8151b73e31f5c74b",
+    "bytes": 328,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/examples/2026-08-30-reply-before-close.html",
+    "sha256": "0960606238c34f96a0633135436b39b8357bc27d5058ba0978d391c8ec660b3c",
+    "bytes": 19287,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/examples/2026-08-30-reply-before-close.md",
+    "sha256": "1d8ff1ea63219dc82e9f0ee9ff26ae1cf4f1def8c5c23d053aaf8f75db98a22e",
+    "bytes": 7310,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/examples/2026-09-04-timeout-was-witness.html",
+    "sha256": "5edd4d93c69f31ca816b2d9f58cc9b5d61fe6a6fc3322067925ee24b37184b66",
+    "bytes": 16150,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/examples/2026-09-04-timeout-was-witness.md",
+    "sha256": "c350f578cf114c54dafb4d4e1ca17454abed50b85710978d193ee7a53285cfcc",
+    "bytes": 5770,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/index.html",
+    "sha256": "e1c53ab3084a8570d5e66c3a6b8855bc165bf1b42b6b1b87417f4a0a1357cfaf",
+    "bytes": 10983,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/index.md",
+    "sha256": "a4a49a196618f5eef2ad40c1e8a1dc4f6991b5adbbfa243f732db6fa36c6d89c",
+    "bytes": 7052,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-08-29-beautify-all-the-journals.html",
+    "sha256": "7990a56bb9891c36854400b226cc53def13e666239940a671e42ed2dfe6311f2",
+    "bytes": 16912,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-08-29-beautify-all-the-journals.md",
+    "sha256": "f83f531d360f24951404bb7a89c9610d8994126e9a61c8268e704480e228674b",
+    "bytes": 10421,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-09-01-close-review-gaps.md",
+    "sha256": "15be2fcb9bb5a4309c4e60260484d26568d81c52e7dcf2869e826c748566e774",
+    "bytes": 18691,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-09-01-denser-bench-sheet.md",
+    "sha256": "8fc41bc06254f5ac1766e3798688b7b206b626adfa1d0f61018085421de56da3",
+    "bytes": 9783,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-09-01-instrument-log-variations.md",
+    "sha256": "d38bae8e3fde8418fed6d6196ec39960b52520c8a4c9b96291ef974c2246cc64",
+    "bytes": 11159,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-09-01-mobile-evidence-first.md",
+    "sha256": "502ce25a0168471c7f0218cc25650a1891dc4bdfd1e34e7daf0798711676c905",
+    "bytes": 14103,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-09-01-promote-dense-bench-sheet.md",
+    "sha256": "ec51f7c19e205ed705b8e2d370a46e423a60755ed297db7bde56c2ca900f98f4",
+    "bytes": 13777,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-09-01-responsive-contract.md",
+    "sha256": "f68ba0b23acdd3a6e01326d46cd8b4da8e841dfaa86960d777ff86bf3c8f3d66",
+    "bytes": 16391,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-09-01-technical-style-study.md",
+    "sha256": "2296ed9bd8b281af374cc5277b2d632a258ace3283ed1ebf9ff1b250518e896f",
+    "bytes": 12021,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "lab-journal/journal-2026-09-01-zero-infrastructure-authoring.md",
+    "sha256": "c69362e587a35a3452b74331e17fb7546c4c619535d6c4a96629a535896c63ae",
+    "bytes": 19589,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "scripts/check-distribution.mjs",
+    "sha256": "913cdd5f8e113a97d288b4b51a098d95d89cfbfd76c4ccf7a3b8456d5360cf30",
+    "bytes": 6091,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "scripts/serve-static.mjs",
+    "sha256": "cc3c5aec76ff0f5a0d4d863e0a766649df023a0880948a28dde54994e31114e6",
+    "bytes": 2514,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "scripts/sync-distribution.mjs",
+    "sha256": "bb072cdda536a0e51e0b14c7e883a55abbbe3d5f99d5169cc4462fa3704ccbff",
+    "bytes": 1565,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "scripts/update-linux-snapshots.mjs",
+    "sha256": "566bd95253d78d6c5b635234183834fc37806fd4b241a19dc21e9c794e6c021a",
+    "bytes": 866,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "scripts/validate-lab-journal.mjs",
+    "sha256": "87960a2f3902a2a43507df174d9ae5b8e42cf75b68817ab80c43ab0b256c5284",
+    "bytes": 9926,
+    "retention": "Original bytes from commit 88f94d7"
+  },
+  {
+    "path": "tmp/technical-style-study/index.html",
+    "sha256": "9679febd87d05b8a6954b9b87af845633fe079211c0c256223557eaebbfb6b90",
+    "bytes": 5850,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  },
+  {
+    "path": "tmp/technical-style-study/instrument-bench-sheet.html",
+    "sha256": "7c043b165f905e2ec8e01c8e6b6e03ba8e770908e560d166b32bdab31e2d11fc",
+    "bytes": 6791,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  },
+  {
+    "path": "tmp/technical-style-study/instrument-calibration.html",
+    "sha256": "d5630a2eca69df7808d1512034efe04c6e5e0061eb6585f687fa59356c67fd8f",
+    "bytes": 6663,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  },
+  {
+    "path": "tmp/technical-style-study/instrument-log.html",
+    "sha256": "d9c7a9d30fc0c138c370f2cf5e675f0a9025e4826e1f34b548c604892f036a22",
+    "bytes": 6638,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  },
+  {
+    "path": "tmp/technical-style-study/instrument-operations.html",
+    "sha256": "3143323599548d51c91dec55a654c2e9cdac5331fe173b3913dd9b6b1ef789c7",
+    "bytes": 6423,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  },
+  {
+    "path": "tmp/technical-style-study/instrument-variations.html",
+    "sha256": "3a3cc79e701258de513cd92191b2165193497b591ee2fb259510c20e34223249",
+    "bytes": 4332,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  },
+  {
+    "path": "tmp/technical-style-study/productive-system.html",
+    "sha256": "0ecb63d4a5adceb6d3f440eda648e85ce1ca35fcf73a41854616c6496d22b790",
+    "bytes": 6990,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  },
+  {
+    "path": "tmp/technical-style-study/standards-memo.html",
+    "sha256": "f92d937f1290783180d64b688b3f738220aed7176bc2ee6954bbc7248ff2385a",
+    "bytes": 6873,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  },
+  {
+    "path": "tmp/technical-style-study/study.css",
+    "sha256": "9843dcda92d929e4d4bb6980609768e14c6e9591d6b4f232956a6e265721f8c2",
+    "bytes": 30562,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  },
+  {
+    "path": "tmp/technical-style-study/technical-paper.html",
+    "sha256": "c44c0e4651b22af999a2eeb4f8bfd369cf1c14b5710a009dc15cab415223b910",
+    "bytes": 6908,
+    "retention": "Recovered working-copy bytes; historical version not independently verified"
+  }
+]

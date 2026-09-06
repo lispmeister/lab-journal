@@ -157,3 +157,38 @@ the bounded repair is repeatable. The broader lifecycle API question remains ope
 **Timestamp:** 2026-08-30T11:26:00+04:00
 **Witness:** Jules Okafor independently observed groups `R-0248-A/B`
 **Next entry:** `2026-09-04-timeout-was-witness.md`
+
+
+## Specimen supplement — 2026-09-06
+
+<a id="COR-0248-DATA"></a>
+
+**COR-0248-DATA · source coverage clarification.** The original narrative above
+is retained. The original CSV is a short illustrative excerpt, not a complete
+run export, and the named test/run groups are not supplied executable artifacts.
+The [aggregate specimen](../attachments/2026-09-06-experiment-aggregate.csv)
+now enumerates every narrative group. Codex constructed it on 2026-09-06 from
+those already-synthesized counts; it is not recovered experimental evidence.
+No per-run timings or historical measurements were invented to fill the gaps.
+
+<a id="ART-0248-AGG"></a>
+
+**ART-0248-AGG:** Aggregate fixture linked above; parents OBS-0248.01–03;
+Codex / narrative transcription / retained / unhashed public specimen. The
+original CSV remains unchanged and is retained as an excerpt. The current HTML
+presentation uses this declared aggregate coverage and links stable objects.
+
+**Role clarification:** The identity table calls Mira Chen the witness while the
+closure names Jules Okafor as independent observer of run groups. These are
+separate stated roles; the current plate labels the closure as independent
+observation rather than silently reassigning the identity-table witness.
+
+
+## Scope amendment — 2026-09-06
+
+[COR-0251-01](2026-09-06-instrumentation-scope-correction.md#COR-0251-01)
+narrows the Q-0248-02 closure: hooks are not necessary for the reported failure;
+whether they perturb ordering remains open. Original text above is preserved.
+This historical specimen is not the current full-format authoring reference;
+use [LN-0251](2026-09-06-instrumentation-scope-correction.md) for the current
+complete anatomy, source scope, ownership and verification fields.

@@ -1,6 +1,7 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import { basename, dirname, extname, join, normalize, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { sharedFiles } from "./distribution-files.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const liveRoot = join(projectRoot, "lab-journal");
@@ -9,21 +10,6 @@ const adapterRoot = join(projectRoot, "starter-kit", "agent-instructions");
 const skillRoot = join(projectRoot, "skills", "lab-journal");
 const skillAssetRoot = join(skillRoot, "assets", "starter-kit");
 const failures = [];
-
-const sharedFiles = [
-  "AUTHORING.md",
-  "TEMPLATE.md",
-  "PLATE-TEMPLATE.html",
-  "assets/notebook.css",
-  "assets/notebook.js",
-  "examples/2026-08-30-reply-before-close.html",
-  "examples/2026-08-30-reply-before-close.md",
-  "examples/2026-09-04-timeout-was-witness.html",
-  "examples/2026-09-04-timeout-was-witness.md",
-  "attachments/2026-08-30-stop-ordering.csv",
-  "attachments/2026-08-30-stop-trace.txt",
-  "attachments/2026-09-04-external-observer.csv",
-];
 
 async function exists(path) {
   try {
@@ -66,6 +52,9 @@ for (const relativePath of sharedFiles) {
     "starter parity",
   );
 }
+
+await sameFile(join(projectRoot, "LICENSE"), join(starterRoot, "LICENSE"), "portable license");
+await sameFile(join(projectRoot, "LICENSE"), join(skillRoot, "LICENSE"), "skill license");
 
 const starterBundleRoot = join(projectRoot, "starter-kit");
 const starterFiles = (await walk(starterBundleRoot)).map((path) => normalize(relative(starterBundleRoot, path))).sort();

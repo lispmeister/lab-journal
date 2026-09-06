@@ -1,6 +1,8 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import { basename, dirname, extname, join, normalize, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createHash } from "node:crypto";
+import { anchorIds, duplicateValues, identityIssues, indexIssues, withoutFences } from "./record-integrity.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const journalRoot = join(projectRoot, "lab-journal");
@@ -53,6 +55,14 @@ async function checkLocalRefs(source, refs) {
   for (const ref of refs) {
     const target = localTarget(ref, source);
     if (target && !(await exists(target))) failures.push(`${displayPath(source)}: missing local target ${ref}`);
+    const fragment = ref.split("#")[1];
+    if (fragment && !/^[a-z]+:/i.test(ref)) {
+      const document = target ?? source;
+      if ((await exists(document)) && [".md", ".html"].includes(extname(document))) {
+        const anchors = anchorIds(await readFile(document, "utf8"), extname(document) === ".html");
+        if (!anchors.includes(decodeURIComponent(fragment))) failures.push(`${displayPath(source)}: missing fragment ${ref}`);
+      }
+    }
   }
 }
 
@@ -148,7 +158,7 @@ for (const htmlFile of htmlFiles) {
 
 for (const markdownFile of markdownFiles) {
   const markdown = await readFile(markdownFile, "utf8");
-  const refs = [...markdown.matchAll(/\]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/g)].map((match) => match[1]);
+  const refs = [...withoutFences(markdown).matchAll(/\]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/g)].map((match) => match[1]);
   await checkLocalRefs(markdownFile, refs);
 }
 
@@ -169,13 +179,14 @@ const layeredMarkdown = markdownFiles.filter((path) => {
 });
 for (const markdownFile of layeredMarkdown) {
   const markdown = await readFile(markdownFile, "utf8");
+  const compact = markdown.includes("<!-- Record format: compact -->");
   const anatomy = [
     [/Entry ID/i, "Entry ID"],
     [/(?:Reconstruction|Capture note)/i, "reconstruction disclosure"],
     [/^## Bench record/im, "Bench record"],
-    [/^## Artifact manifest/im, "Artifact manifest"],
-    [/^## (?:Open questions|Open-question ledger|Question ledger)/im, "question ledger"],
-    [/^## (?:Correction ledger|Corrections and later annotations)/im, "correction ledger"],
+    [compact ? /^## Evidence and decision/im : /^## Artifact manifest/im, "Artifact manifest"],
+    [compact ? /\*\*Open questions:/i : /^## (?:Open questions|Open-question ledger|Question ledger)/im, "question ledger"],
+    [compact ? /\*\*Corrections:/i : /^## (?:Correction ledger|Corrections and later annotations)/im, "correction ledger"],
     [/^## Closure/im, "Closure"],
   ];
   for (const [pattern, label] of anatomy) {
@@ -204,6 +215,22 @@ for (const row of htmlIndex.matchAll(/<article\s+class=["'][^"']*catalog-row[^"'
 }
 
 const liveMarkdown = markdownFiles.filter((path) => dirname(path) === journalRoot && /^journal-.*\.md$/.test(basename(path)));
+const records = await Promise.all(liveMarkdown.map(async (path) => ({ name: basename(path), source: await readFile(path, "utf8") })));
+failures.push(...indexIssues(records, markdownIndex, htmlIndex));
+const legacy = JSON.parse(await readFile(join(projectRoot, "scripts", "legacy-records.json"), "utf8"));
+for (const path of layeredMarkdown) {
+  const bytes = await readFile(path);
+  const key = relative(journalRoot, path).replaceAll("\\", "/");
+  if (legacy[key]) {
+    const hash = createHash("sha256").update(bytes.subarray(0, legacy[key].bytes)).digest("hex");
+    if (hash !== legacy[key].sha256) failures.push(`${displayPath(path)}: preserved legacy record was rewritten`);
+  } else {
+    failures.push(...identityIssues(bytes.toString()).map((issue) => `${displayPath(path)}: ${issue}`));
+  }
+}
+for (const path of [...htmlFiles, ...layeredMarkdown]) {
+  for (const id of duplicateValues(anchorIds(await readFile(path, "utf8"), extname(path) === ".html"))) failures.push(`${displayPath(path)}: duplicate anchor ${id}`);
+}
 for (const markdownFile of liveMarkdown) {
   const name = basename(markdownFile);
   if (!indexedMarkdown.has(name)) failures.push(`lab-journal/index.html: missing catalog row for ${name}`);

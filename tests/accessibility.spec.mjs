@@ -2,7 +2,11 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import { archive, openNotebookPage, plates, starterArchive } from "./notebook-pages.mjs";
 
-const surfaces = [archive, starterArchive, ...plates.filter(({ name }) => ["experiment", "correction"].includes(name))];
+const surfaces = [archive, starterArchive, ...plates,
+  { name: "Cambrian campaign", path: "/docs/reviews/cambrian/journal-2026-04-04b.html" },
+  { name: "Cambrian diagnosis", path: "/docs/reviews/cambrian/journal-2026-04-01c.html" },
+  { name: "Cambrian routine", path: "/docs/reviews/cambrian/journal-2026-04-03d.html" },
+];
 const viewports = [
   { name: "mobile", width: 320, height: 700 },
   { name: "desktop", width: 1440, height: 900 },

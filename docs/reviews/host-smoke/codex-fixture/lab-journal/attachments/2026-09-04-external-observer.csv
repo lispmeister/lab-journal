@@ -1,0 +1,11 @@
+run,internal_trace,encode_called_before_close,write_callback_before_close,ack_observed
+1,false,true,false,false
+2,false,true,false,false
+3,false,true,false,false
+4,false,true,false,false
+5,false,true,false,false
+6,false,true,true,true
+7,false,true,true,true
+8,false,true,true,true
+9,false,true,true,true
+10,false,true,true,true

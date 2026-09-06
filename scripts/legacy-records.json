@@ -1,0 +1,62 @@
+{
+  "journal-2026-08-29-beautify-all-the-journals.md": {
+    "bytes": 10421,
+    "sha256": "f83f531d360f24951404bb7a89c9610d8994126e9a61c8268e704480e228674b"
+  },
+  "journal-2026-09-01-close-review-gaps.md": {
+    "bytes": 18691,
+    "sha256": "15be2fcb9bb5a4309c4e60260484d26568d81c52e7dcf2869e826c748566e774"
+  },
+  "journal-2026-09-01-denser-bench-sheet.md": {
+    "bytes": 9783,
+    "sha256": "8fc41bc06254f5ac1766e3798688b7b206b626adfa1d0f61018085421de56da3"
+  },
+  "journal-2026-09-01-instrument-log-variations.md": {
+    "bytes": 11159,
+    "sha256": "d38bae8e3fde8418fed6d6196ec39960b52520c8a4c9b96291ef974c2246cc64"
+  },
+  "journal-2026-09-01-mobile-evidence-first.md": {
+    "bytes": 14103,
+    "sha256": "502ce25a0168471c7f0218cc25650a1891dc4bdfd1e34e7daf0798711676c905"
+  },
+  "journal-2026-09-01-promote-dense-bench-sheet.md": {
+    "bytes": 13777,
+    "sha256": "ec51f7c19e205ed705b8e2d370a46e423a60755ed297db7bde56c2ca900f98f4"
+  },
+  "journal-2026-09-01-responsive-contract.md": {
+    "bytes": 16391,
+    "sha256": "f68ba0b23acdd3a6e01326d46cd8b4da8e841dfaa86960d777ff86bf3c8f3d66"
+  },
+  "journal-2026-09-01-technical-style-study.md": {
+    "bytes": 12021,
+    "sha256": "2296ed9bd8b281af374cc5277b2d632a258ace3283ed1ebf9ff1b250518e896f"
+  },
+  "journal-2026-09-01-zero-infrastructure-authoring.md": {
+    "bytes": 19589,
+    "sha256": "c69362e587a35a3452b74331e17fb7546c4c619535d6c4a96629a535896c63ae"
+  },
+  "journal-2026-09-06-agent-authoring-contract.md": {
+    "bytes": 10489,
+    "sha256": "397fbc47c38027c9e68245ab8a3b80b3c2841416f944eeedfdea8fd4b1b971f4"
+  },
+  "journal-2026-09-06-cambrian-content-trial.md": {
+    "bytes": 10837,
+    "sha256": "e714ebd3233039865527938f449dc181c814fc7b7e194bc37a877875cb216352"
+  },
+  "journal-2026-09-06-reader-and-author-contract.md": {
+    "bytes": 19081,
+    "sha256": "58415bb781a1ba10f20d0ea6c1e87c2e5efa0148377a971bd8aedd2900aa66e2"
+  },
+  "examples/2026-09-06-routine-link-fix.md": {
+    "bytes": 2623,
+    "sha256": "843da34ea256a188af127d7e626ad16366ae1137deb0151e0616810ae51a7c17"
+  },
+  "examples/2026-09-04-timeout-was-witness.md": {
+    "bytes": 7536,
+    "sha256": "790bf09227953fc9021e384a3b33477ef72396c05b18192c730c8e54a8f0c0d5"
+  },
+  "examples/2026-08-30-reply-before-close.md": {
+    "bytes": 9062,
+    "sha256": "c588dd48c964ccb7c02e8e7f3fd7ef17bec99c8c5768a407767176b482895589"
+  }
+}

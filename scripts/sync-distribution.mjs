@@ -1,26 +1,15 @@
 import { copyFile, cp, mkdir, rm } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { sharedFiles } from "./distribution-files.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const liveRoot = join(projectRoot, "lab-journal");
 const starterRoot = join(projectRoot, "starter-kit", "lab-journal");
 const skillAssetRoot = join(projectRoot, "skills", "lab-journal", "assets", "starter-kit");
 
-const sharedFiles = [
-  "AUTHORING.md",
-  "TEMPLATE.md",
-  "PLATE-TEMPLATE.html",
-  "assets/notebook.css",
-  "assets/notebook.js",
-  "examples/2026-08-30-reply-before-close.html",
-  "examples/2026-08-30-reply-before-close.md",
-  "examples/2026-09-04-timeout-was-witness.html",
-  "examples/2026-09-04-timeout-was-witness.md",
-  "attachments/2026-08-30-stop-ordering.csv",
-  "attachments/2026-08-30-stop-trace.txt",
-  "attachments/2026-09-04-external-observer.csv",
-];
+await copyFile(join(projectRoot, "LICENSE"), join(starterRoot, "LICENSE"));
+await copyFile(join(projectRoot, "LICENSE"), join(projectRoot, "skills", "lab-journal", "LICENSE"));
 
 for (const relativePath of sharedFiles) {
   const destination = join(starterRoot, relativePath);

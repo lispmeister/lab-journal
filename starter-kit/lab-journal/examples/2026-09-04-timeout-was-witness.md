@@ -116,3 +116,38 @@ invocation from completed socket write.
 **Timestamp:** 2026-09-04T16:44:00+04:00
 **Witness:** Mira Chen reviewed the epistemic diff and artifact linkage
 **Next entry:** unresolved; Q-0248-01 remains open
+
+
+## Specimen supplement — 2026-09-06
+
+<a id="COR-0249-DATA"></a>
+
+**COR-0249-DATA · source coverage clarification.** The original narrative above
+is retained. The original CSV is a short illustrative excerpt, not a complete
+run export, and the named test/run groups are not supplied executable artifacts.
+The [aggregate specimen](../attachments/2026-09-06-correction-aggregate.csv)
+now enumerates every narrative group. Codex constructed it on 2026-09-06 from
+those already-synthesized counts; it is not recovered experimental evidence.
+No per-run timings or historical measurements were invented to fill the gaps.
+
+<a id="ART-0249-AGG"></a>
+
+**ART-0249-AGG:** Aggregate fixture linked above; parents OBS-0249.01–02;
+Codex / narrative transcription / retained / unhashed public specimen. The
+original CSV remains unchanged and is retained as an excerpt. The current HTML
+presentation uses this declared aggregate coverage and links stable objects.
+
+**Count clarification:** The correction describes five initial immediate stops,
+twenty callback-sequenced runs, and five subsequent controls: 30 observations
+across three groups. The original HTML's “25/25 externally observed runs” omitted
+the initial group. The current plate displays 30 runs across three groups.
+
+
+## Scope amendment — 2026-09-06
+
+[COR-0251-01](2026-09-06-instrumentation-scope-correction.md#COR-0251-01)
+narrows the Q-0248-02 closure: hooks are not necessary for the reported failure;
+whether they perturb ordering remains open. Original text above is preserved.
+This historical specimen is not the current full-format authoring reference;
+use [LN-0251](2026-09-06-instrumentation-scope-correction.md) for the current
+complete anatomy, source scope, ownership and verification fields.

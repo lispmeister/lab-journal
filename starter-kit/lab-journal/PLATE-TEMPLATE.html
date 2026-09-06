@@ -11,7 +11,8 @@
 <body>
   <!--
     Copy beside the canonical Markdown entry and give both files the same
-    basename. Replace every bracketed field. Change href="#" below to the
+    basename. Replace every bracketed field and NNNN token, including IDs and
+    links. Change href="#" below to the
     Markdown filename. All factual claims must be supported by that Markdown or
     a linked artifact. Delete unused visual modules, but preserve every major
     record section. Use the shared dense bench-sheet grammar; do not add an
@@ -26,7 +27,7 @@
       <nav class="topnav" aria-label="Entry utilities">
         <a href="index.html">Index</a>
         <a class="source-link" href="#">Markdown source</a>
-        <button class="print-button" type="button" onclick="window.print()">Print / PDF</button>
+        <button class="print-button" type="button">Print / PDF</button>
       </nav>
     </div>
   </header>
@@ -56,8 +57,14 @@
 
       <section class="record-section" id="identity" data-journal-section data-record-layer="bench synthesis plate">
         <span class="layer-mark synthesis">Shared provenance</span>
-        <div class="section-head"><div><span class="section-label">00 / Record identity</span><h2>Who knew what, when.</h2></div><p class="section-intro">Declare authorship, roles, capture mode, environment, reconstruction, and handling before presenting the result.</p></div>
+        <div class="section-head"><div><span class="section-label">00 / Record identity</span><h2>[Record provenance]</h2></div><!-- Author guidance: Declare authorship, roles, capture mode, environment, reconstruction, and handling before presenting the result. --></div>
         <div class="record-ledger">
+          <div class="ledger-row"><div class="ledger-key">Opened</div><div class="ledger-value">[ISO timestamp with timezone]</div><div class="ledger-key">Closed</div><div class="ledger-value">[ISO timestamp or open]</div></div>
+          <div class="ledger-row"><div class="ledger-key">Project / phase</div><div class="ledger-value">[project / phase]</div><div class="ledger-key">Environment</div><div class="ledger-value">[hardware, OS, relevant versions, state]</div></div>
+          <div class="ledger-row"><div class="ledger-key">Reconstruction sources</div><div class="ledger-value">[source IDs or none]</div><div class="ledger-key">Gaps</div><div class="ledger-value">[unknowns or none]</div></div>
+          <div class="ledger-row"><div class="ledger-key">Parent entry</div><div class="ledger-value">[relative entry link or none]</div><div class="ledger-key">Correction target</div><div class="ledger-value">[exact claim link or none]</div></div>
+          <div class="ledger-row"><div class="ledger-key">Artifacts</div><div class="ledger-value">[relative attachment location]</div><div class="ledger-key">Retention</div><div class="ledger-value">[retained / external / unavailable]</div></div>
+
           <div class="ledger-row"><div class="ledger-key">Entry</div><div class="ledger-value">LN-NNNN</div><div class="ledger-key">Status</div><div class="ledger-value">[open / signed / witnessed / correction]</div></div>
           <div class="ledger-row"><div class="ledger-key">Author</div><div class="ledger-value">[name · role]</div><div class="ledger-key">Operator</div><div class="ledger-value">[name · role]</div></div>
           <div class="ledger-row"><div class="ledger-key">Observer</div><div class="ledger-value">[name / none]</div><div class="ledger-key">Witness</div><div class="ledger-value">[name / pending]</div></div>
@@ -67,44 +74,46 @@
 
       <section class="record-section" id="field" data-journal-section data-record-layer="bench">
         <span class="layer-mark bench">Contemporaneous layer</span>
-        <div class="section-head"><div><span class="section-label">01 / Fast field notes</span><h2>Before the story became tidy.</h2></div><p class="section-intro">Retain terse notes in sequence. Never polish them after learning the result.</p></div>
+        <div class="section-head"><div><span class="section-label">01 / Fast field notes</span><h2>[Sequence of field notes]</h2></div><!-- Author guidance: Retain terse notes in sequence. Never polish them after learning the result. --></div>
         <div class="field-note"><time>[HH:MM]</time><p>[Verbatim fragment, command, surprise, or uncertainty.]</p></div>
       </section>
 
       <section class="record-section" id="bench" data-journal-section data-record-layer="bench">
         <span class="layer-mark bench">Observed phenomenon</span>
-        <div class="section-head"><div><span class="section-label">02 / Bench record</span><h2>Observation stays separate.</h2></div><p class="section-intro">Duplicate this block for every stable observation. Preserve interpretation-at-the-time even when later evidence changes it.</p></div>
-        <div class="observation-stack"><article class="observation"><div class="obs-head"><span class="obs-id">OBS-NNNN.01</span><span class="obs-time">[ISO time or sequence]</span></div><div class="obs-grid"><div class="obs-cell"><div class="obs-label">Setup / action</div><div class="obs-value">[What was controlled or changed.]</div></div><div class="obs-cell"><div class="obs-label">Raw observation</div><div class="obs-value raw">[Direct output, count, or state.]</div></div><div class="obs-cell"><div class="obs-label">Interpretation at the time</div><div class="obs-value">[What it seemed to mean then.]</div></div><div class="obs-cell"><div class="obs-label">Confidence</div><div class="obs-value"><span class="confidence-tag">[low / medium / high]</span></div></div><div class="obs-cell full"><div class="obs-label">Attribution · evidence · next move</div><div class="obs-value">[Who observed] · [ART-NNNN.01] · [next discriminating action]</div></div></div></article></div>
+        <div class="section-head"><div><span class="section-label">02 / Bench record</span><h2>[Observed result]</h2></div><!-- Author guidance: Duplicate this block for every stable observation. Preserve interpretation-at-the-time even when later evidence changes it. --></div>
+        <div class="observation-stack"><article class="observation" id="OBS-NNNN.01"><div class="obs-head"><a class="obs-id object-link" href="#OBS-NNNN.01">OBS-NNNN.01</a><span class="obs-time">[ISO time or sequence]</span></div><div class="obs-grid"><div class="obs-cell"><div class="obs-label">Setup / action</div><div class="obs-value">[What was controlled or changed.]</div></div><div class="obs-cell"><div class="obs-label">Raw observation</div><div class="obs-value raw">[Direct output, count, or state.]</div></div><div class="obs-cell"><div class="obs-label">Interpretation at the time</div><div class="obs-value">[What it seemed to mean then.]</div></div><div class="obs-cell"><div class="obs-label">Confidence</div><div class="obs-value"><span class="confidence-tag">[low / medium / high]</span></div></div><div class="obs-cell full"><div class="obs-label">Attribution · evidence · next move</div><div class="obs-value">[Who observed] · [<a class="object-link" href="#ART-NNNN.01">ART-NNNN.01</a>] · [next discriminating action]</div></div></div></article></div>
       </section>
 
       <section class="record-section" id="visual" data-journal-section data-record-layer="plate">
         <span class="layer-mark plate">Visual reasoning</span>
-        <div class="section-head"><div><span class="section-label">03 / Visual plate</span><h2>[The relationship this figure reveals.]</h2></div><p class="section-intro">Choose one evidence-specific form: chronology, topology, prediction/measurement plot, fault atlas, comparison, or corrective diff.</p></div>
-        <div class="sketch-frame"><div class="sketch-meta"><div><b>Figure</b><span>F-NNNN-01</span></div><div><b>Kind</b><span>[conjecture / measured / corrective]</span></div><div><b>Created</b><span>[time or after OBS ID]</span></div><div><b>Supported by</b><span>[OBS / ART IDs]</span></div></div><div class="sketch-body"><p>[Replace with an accessible inline SVG, semantic table, or other evidence-bearing visual. Every SVG needs title and desc.]</p></div></div>
+        <div class="section-head"><div><span class="section-label">03 / Visual plate</span><h2>[The relationship this figure reveals.]</h2></div><!-- Author guidance: Choose one evidence-specific form: chronology, topology, prediction/measurement plot, fault atlas, comparison, or corrective diff. --></div>
+        <div class="sketch-frame" id="F-NNNN-01"><div class="sketch-meta"><div><b>Figure</b><span><a class="object-link" href="#F-NNNN-01">F-NNNN-01</a></span></div><div><b>Kind</b><span>[conjecture / measured / corrective]</span></div><div><b>Created</b><span>[time or after OBS ID]</span></div><div><b>Supported by</b><span>[OBS / ART IDs]</span></div></div><div class="sketch-body"><figure class="evidence-flow conjecture"><figcaption>[Proposed or measured sequence]</figcaption><ol class="flow-steps"><li>[First event]</li><li>[Second event]</li><li>[Observed boundary]</li></ol><p class="flow-outcome">[Scope and supporting observation links]</p></figure></div></div>
       </section>
 
       <section class="record-section" id="synthesis" data-journal-section data-record-layer="synthesis">
         <span class="layer-mark synthesis">Bounded synthesis</span>
-        <div class="section-head"><div><span class="section-label">04 / Synthesis</span><h2>[Smallest supported conclusion.]</h2></div><p class="section-intro">Keep observation, interpretation, hypothesis, discriminating test, conclusion, and projection visibly distinct.</p></div>
-        <div class="matrix-wrap"><table><thead><tr><th>Epistemic state</th><th>Statement</th><th>Support</th></tr></thead><tbody><tr><td>Observation</td><td>[Direct fact]</td><td>[OBS/ART]</td></tr><tr><td>Interpretation</td><td>[Meaning assigned]</td><td>[OBS]</td></tr><tr><td>Hypothesis</td><td>[Falsifiable explanation]</td><td>[H ID]</td></tr><tr><td>Discriminating test</td><td>[Test or next test]</td><td>[OBS/ART]</td></tr><tr><td>Conclusion</td><td>[Bounded claim]</td><td>[OBS/ART]</td></tr><tr><td>Projection</td><td>[Unverified consequence]</td><td>Not yet observed</td></tr></tbody></table></div>
+        <div class="section-head"><div><span class="section-label">04 / Synthesis</span><h2>[Smallest supported conclusion.]</h2></div><!-- Author guidance: Keep observation, interpretation, hypothesis, discriminating test, conclusion, and projection visibly distinct. --></div>
+        <div class="matrix-wrap scroll-x" role="region" tabindex="0" aria-label="Evidence table; scroll horizontally if needed"><table><thead><tr><th>Epistemic state</th><th>Statement</th><th>Support</th></tr></thead><tbody><tr><td>Observation</td><td>[Direct fact]</td><td>[OBS/ART]</td></tr><tr><td>Interpretation</td><td>[Meaning assigned]</td><td>[OBS]</td></tr><tr><td>Hypothesis</td><td>[Falsifiable explanation]</td><td>[H ID]</td></tr><tr><td>Discriminating test</td><td>[Test or next test]</td><td>[OBS/ART]</td></tr><tr><td>Conclusion</td><td>[Bounded claim]</td><td>[OBS/ART]</td></tr><tr><td>Projection</td><td>[Unverified consequence]</td><td>Not yet observed</td></tr></tbody></table></div>
       </section>
 
       <section class="record-section" id="artifacts" data-journal-section data-record-layer="bench synthesis">
         <span class="layer-mark bench">Attached evidence</span>
-        <div class="section-head"><div><span class="section-label">05 / Artifact manifest</span><h2>The evidence travels with the claim.</h2></div><p class="section-intro">Include stable ID, parent observation, relative link, capturer, method, integrity, and handling.</p></div>
-        <div class="matrix-wrap scroll-x" role="region" aria-label="Artifact table; scroll horizontally on narrow screens" tabindex="0"><table><thead><tr><th>ID</th><th>Parent</th><th>Artifact</th><th>Captured by</th><th>Integrity</th><th>Handling</th></tr></thead><tbody><tr><td>ART-NNNN.01</td><td>OBS-NNNN.01</td><td>[relative link]</td><td>[name · method]</td><td>[checksum / state]</td><td>[classification]</td></tr></tbody></table></div>
+        <div class="section-head"><div><span class="section-label">05 / Artifact manifest</span><h2>[Evidence and retention]</h2></div><!-- Author guidance: Include stable ID, parent observation, relative link, capturer, method, integrity, and handling. --></div>
+        <div class="matrix-wrap scroll-x" role="region" aria-label="Artifact table; scroll horizontally on narrow screens" tabindex="0"><table><thead><tr><th>ID</th><th>Parent</th><th>Artifact</th><th>Captured by</th><th>Integrity</th><th>Handling</th></tr></thead><tbody><tr id="ART-NNNN.01"><td><a class="object-link" href="#ART-NNNN.01">ART-NNNN.01</a></td><td><a class="object-link" href="#OBS-NNNN.01">OBS-NNNN.01</a></td><td>[relative link]</td><td>[name · method]</td><td>[checksum / state]</td><td>[classification]</td></tr></tbody></table></div>
       </section>
 
       <section class="record-section" id="questions" data-journal-section data-record-layer="bench synthesis">
         <span class="layer-mark synthesis">Durable uncertainty</span>
-        <div class="section-head"><div><span class="section-label">06 / Open questions</span><h2>Closure is not compulsory.</h2></div><p class="section-intro">Give every unresolved question an owner and a discriminating next action.</p></div>
-        <div class="question-grid"><article class="question-card"><span class="question-id">Q-NNNN-01 · OPEN</span><h3>[Bounded unknown]</h3><p>[Owner] · [next discriminating action]</p></article></div>
+        <div class="section-head"><div><span class="section-label">06 / Open questions</span><h2>[Unresolved questions]</h2></div><!-- Author guidance: Give every unresolved question an owner and a discriminating next action. --></div>
+        <div class="question-grid"><article class="question-card" id="Q-NNNN-01"><span class="question-id"><a class="object-link" href="#Q-NNNN-01">Q-NNNN-01</a> · OPEN</span><h3>[Bounded unknown]</h3><p>[Owner] · [next discriminating action]</p></article></div>
       </section>
 
       <footer class="signoff" id="closure" data-journal-section data-record-layer="bench synthesis plate">
         <span class="section-label">07 / Closure</span><h2>[Signed without overstating certainty.]</h2>
         <div class="sign-grid"><div class="sign-cell"><div class="sign-label">Conclusion</div><div class="sign-value">[BOUNDED RESULT]</div></div><div class="sign-cell"><div class="sign-label">Timestamp</div><div class="sign-value">[ISO timestamp]</div></div><div class="sign-cell"><div class="sign-label">Witness</div><div class="sign-value">[name / pending]</div></div><div class="sign-cell"><div class="sign-label">Repository state</div><div class="sign-value">[commit / tree]</div></div></div>
-        <div class="signature-line"><span>[Signed by]</span><span>Canonical narrative · <a href="#">Markdown</a></span></div>
+        <p><strong>Verification / limitations:</strong> [Checks actually performed, outcomes, evidence links; not checked or not applicable with reasons.]</p>
+        <p><strong>Still unresolved / next entry:</strong> [Question IDs and next action, or none.]</p>
+        <div class="signature-line"><span>[Signed by · role · method]</span><span>Canonical narrative · <a href="#">Markdown</a></span></div>
       </footer>
     </main>
   </div>

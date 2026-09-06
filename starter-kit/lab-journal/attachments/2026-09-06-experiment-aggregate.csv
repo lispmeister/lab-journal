@@ -1,0 +1,5 @@
+observation,group,runs,acknowledgements,provenance
+OBS-0248.01,immediate-stop,3,0,synthesized-2026-09-06-from-narrative-not-a-capture
+OBS-0248.02,write-barrier,10,10,synthesized-2026-09-06-from-narrative-not-a-capture
+OBS-0248.03,deferred-stop,30,30,synthesized-2026-09-06-from-narrative-not-a-capture
+OBS-0248.03,callback-sequence,30,30,synthesized-2026-09-06-from-narrative-not-a-capture

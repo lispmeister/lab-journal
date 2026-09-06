@@ -1,0 +1,20 @@
+[
+  {
+    "file": "journal-2026-04-03d.md",
+    "source": "https://github.com/lispmeister/cambrian/blob/a4d2181c488bc5f0ff329438541cba51e8543fc8/lab-journal/journal-2026-04-03d.md",
+    "sha256": "d950ed6a7554f8cd62f3795800b36b9b10f143b1d6d62f65a944f4ff59cb6d0e",
+    "bytes": 702
+  },
+  {
+    "file": "journal-2026-04-04b.md",
+    "source": "https://github.com/lispmeister/cambrian/blob/a4d2181c488bc5f0ff329438541cba51e8543fc8/lab-journal/journal-2026-04-04b.md",
+    "sha256": "c389f43890f8b80fef568a4e79dff180da700983d6eac8de922b7388cc087d8e",
+    "bytes": 5233
+  },
+  {
+    "file": "journal-2026-04-01c.md",
+    "source": "https://github.com/lispmeister/cambrian/blob/a4d2181c488bc5f0ff329438541cba51e8543fc8/lab-journal/journal-2026-04-01c.md",
+    "sha256": "8078ccfc5a781cd13d9181183d742a000e5ffb6afbddb1af05f283d2502e6fea",
+    "bytes": 10548
+  }
+]

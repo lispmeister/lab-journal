@@ -29,6 +29,8 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   projects: [
+    { name: "firefox", testMatch: /(?:reader-tasks|real-content|print-control)\.spec\.mjs/, use: { ...devices["Desktop Firefox"] } },
+    { name: "webkit", testMatch: /(?:reader-tasks|real-content|print-control)\.spec\.mjs/, use: { ...devices["Desktop Safari"] } },
     {
       name: "chromium",
       use: {
