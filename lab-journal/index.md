@@ -34,18 +34,20 @@ into the notebook.
 
 ### People and roles
 
-- **Codex:** author and operator for LN-0001 through LN-0013.
+- **Codex:** author and operator for LN-0001 through LN-0014.
 - **Independent witness:** none recorded for these implementation checks; user review is design acceptance.
 - **Design-direction review:** user selected option C from LN-0002 in LN-0003.
 - **Instrument-variant design review:** historical comparison requested in LN-0003.
 - **Dense bench-sheet design acceptance:** user accepted the refined C3 in LN-0005.
 - **Live design-system review:** pending final implementation review for LN-0005.
 - **Mobile evidence-first review:** implementation criteria passed; user review pending for LN-0006.
-- **Responsive-contract implementation:** Codex operator; user authorization; hosted CI observation pending for LN-0007.
+- **Responsive-contract implementation:** Codex operator; user authorization; hosted CI passed in LN-0014.
 - **Zero-infrastructure distribution:** Codex author/operator; user directed the corrected boundary and authorized implementation in LN-0008.
 - **Pre-merge review corrections:** Codex author/operator; user authorized all fixes and final QA in LN-0009.
 
 ### Systems and instruments
+
+- **Print controls and hosted CI:** [LN-0014](journal-2026-09-06-print-control-and-release.md).
 
 - **Review remediation:** [LN-0013](journal-2026-09-06-close-real-content-gaps.md).
 
@@ -75,7 +77,7 @@ into the notebook.
 - [Q-0008-02 remains open](journal-2026-09-06-close-real-content-gaps.md#host-verification-limits): the actual Claude Code attempt returned organization-policy 403; release maintainer must resolve access and rerun authoring.
 - [Q-0013-01 remains open](journal-2026-09-06-close-real-content-gaps.md#host-verification-limits): Grok read the skill/protocol but headless execution cancelled; release maintainer must diagnose cancellation and rerun adoption/correction. Discovery alone remains verified.
 - Q-0008-01 was closed by the isolated file-only Markdown/HTML authorship and index-update smoke in LN-0008.
-- Q-0007-02 remains open until the first hosted GitHub Actions run confirms the locally simulated pinned workflow.
+- [Q-0007-02 closed by LN-0014](journal-2026-09-06-print-control-and-release.md#hosted-result-and-closure): actual hosted run 34049771817 passed after correcting Firefox home ownership.
 - Q-0007-01 was closed by complete no-update 57/57 passes on macOS and the pinned Linux Playwright container in LN-0007.
 - Q-0006-01 was closed by the 25-combination portrait matrix, landscape and desktop checks, interaction tests, and static validation in LN-0006.
 - Q-0005-01 was closed within the documented direct-file instrumentation limit by responsive Chrome inspection and static validation in LN-0005.
@@ -85,6 +87,8 @@ into the notebook.
 - Q-0001-01 was closed by validation in LN-0001.
 
 ### Corrections
+
+- [COR-0014-01: print layout versus native print control](journal-2026-09-06-print-control-and-release.md#COR-0014-01).
 
 - [COR-0001-01: timestamp label corrected](journal-2026-08-29-beautify-all-the-journals.md#correction-ledger) · preserved in LN-0001; previously omitted from this lens.
 - [COR-0010-01: retention clarification for LN-0002–0006](journal-2026-09-06-reader-and-author-contract.md#COR-0010-01).

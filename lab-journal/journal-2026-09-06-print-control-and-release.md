@@ -1,6 +1,6 @@
 # Printing must give readers a usable next step
 
-> **Record status:** open
+> **Record status:** signed
 >
 > **Capture note:** mixed. The preceding in-app print-button observation is reconstructed from the prior conversation; implementation and release checks start with this entry.
 
@@ -10,9 +10,9 @@
 |---|---|
 | Entry ID | LN-0014 |
 | Date | 2026-09-06 |
-| Opened / closed | 2026-09-06T17:24:24Z / open |
+| Opened / closed | 2026-09-06T17:24:24Z / 2026-09-06T17:52:00Z |
 | Project / phase | lab-journal / print control and release |
-| Status | Open |
+| Status | Signed |
 | Authors | Codex — implementation and release review |
 | Operators | Codex — file, browser and git operations |
 | Independent observer | None |
@@ -81,6 +81,8 @@ bypassed. Release outcome follows actual checks.
 
 ## Correction ledger
 
+<a id="COR-0014-01"></a>
+
 COR-0014-01 narrows LN-0013's verification scope: its generated PDFs and print
 media checks did not establish that clicking Print / PDF opens a native dialog
 in the in-app browser. Prior results remain retained and valid within their scope.
@@ -138,3 +140,42 @@ Prediction before rerun: aligning that existing directory's ownership with the
 container process user will allow Firefox to launch. Added a workflow step
 that changes only the home directory's ownership, without changing HOME or
 disabling Firefox checks/sandbox policy. Hosted rerun is the discriminating test.
+
+## Hosted result and closure
+
+<a id="OBS-0014.05"></a>
+
+**OBS-0014.05:** Hosted run
+[34049771817](https://github.com/lispmeister/lab-journal/actions/runs/34049771817)
+passed on head `68f97c7` after the ownership correction. All three browser engines
+ran; 156 cases passed and two native-lifecycle cases were explicitly skipped.
+All four integrity tests and both validators passed. H-0014.02 is supported for
+this checked revision. Q-0007-02 is closed by an actual hosted observation,
+not the earlier local simulation. No baseline was updated during the passing
+local or hosted gate.
+
+**Artifacts:** ART-0014.02 [local complete gate](../docs/reviews/print-release-macos.log),
+parent OBS-0014.02; ART-0014.03 [hosted complete gate](../docs/reviews/print-release-hosted.log),
+parent OBS-0014.05. Codex retained actual command output; public test data.
+The failed hosted run remains available via its immutable run URL above.
+
+**Bounded conclusion:** Print controls now provide a useful fallback, saved
+sample PDFs are reachable, and the corrected distribution passes hosted CI.
+Actual in-app feedback was inspected. Native OS dialog display and physical
+printing were not witnessed; browser printing success is not inferred from
+the headless beforeprint event. A final record/index-only commit will repeat
+the no-update gate and must pass hosted CI before the authorized PR merge.
+
+**Still unresolved:** Q-0008-02 (Claude organization access), Q-0013-01 (Grok
+headless cancellation), Q-0010-01 (further user design feedback). These documented
+host limits do not imply a successful cross-host authoring test. No credentials,
+account policy or permission safeguards were changed to bypass them.
+
+**Signed by / at:** Codex / 2026-09-06T17:52:00Z / author and operator attestation,
+using the actual closing clock read. **Witness:** None; no independent event.
+**Repository state:** `beautify-all-the-journals`, implementation `1ef1948`,
+hosted fix `68f97c7`, with this closing record/index update pending commit;
+[PR #1](https://github.com/lispmeister/lab-journal/pull/1). Merge is authorized
+but has not occurred at this signature. **Expected next entry:** host access/
+execution resolution or new user design findings; git/PR history records the
+subsequent merge outcome.
