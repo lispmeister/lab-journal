@@ -122,3 +122,19 @@ organization-policy 403 has no known access change; no redundant retry or
 credential/configuration change was attempted. Compatibility limitations remain
 documented. Next: complete gates, commit the accumulated authorized work and
 create a PR to observe hosted CI before merging.
+
+
+**Release sequence:** Complete no-update local gate passed 156 browser checks and four integrity checks, with two native headless lifecycle cases explicitly skipped. Committed accumulated work as `1ef1948` and pushed the branch. The first PR creation request raced the still-running upload and failed with missing head-ref/sha; the push completed successfully afterward. Retry is ordered after confirmed remote ref equality. No alternate branch or force push was used.
+
+<a id="OBS-0014.04"></a>
+
+**OBS-0014.04 · hosted failure and discriminating fix.** PR #1's first hosted
+run [34049319359](https://github.com/lispmeister/lab-journal/actions/runs/34049319359)
+passed 130 browser cases but failed all 27 Firefox cases at process launch (one
+other engine-specific case skipped). Its log says the root container process
+has `/github/home` owned by `pwuser`; Firefox rejects another user's home.
+This is an actual hosted-environment mismatch, not a page assertion failure.
+Prediction before rerun: aligning that existing directory's ownership with the
+container process user will allow Firefox to launch. Added a workflow step
+that changes only the home directory's ownership, without changing HOME or
+disabling Firefox checks/sandbox policy. Hosted rerun is the discriminating test.
