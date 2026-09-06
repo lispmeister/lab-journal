@@ -1,0 +1,39 @@
+name: Notebook quality
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  responsive-contract:
+    runs-on: ubuntu-24.04
+    container: mcr.microsoft.com/playwright:v1.62.1-noble
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24.15.0"
+          cache: npm
+          package-manager-cache: false
+      - run: npm ci
+      # GitHub mounts this directory with the runner's UID, while this container
+      # runs as root. Firefox refuses to start with another user's home directory.
+      - name: Align browser home ownership
+        run: chown "$(id -u):$(id -g)" "$HOME"
+      - run: npm test
+      - name: Upload browser-test diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: notebook-browser-test-diagnostics
+          path: |
+            playwright-report
+            test-results
+          if-no-files-found: ignore
+          retention-days: 14

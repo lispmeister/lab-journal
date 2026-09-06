@@ -1,0 +1,5 @@
+2026-08-30T09:18:14.218+04:00 rpc.request  id=41 method=system.stop
+2026-08-30T09:18:14.219+04:00 stop.begin   in_flight=1 sockets=1
+2026-08-30T09:18:14.219+04:00 socket.close id=owner-7 reason=service-stop
+2026-08-30T09:18:14.220+04:00 reply.encode id=41 bytes=40
+2026-08-30T09:18:14.220+04:00 reply.write  id=41 result=socket-destroyed

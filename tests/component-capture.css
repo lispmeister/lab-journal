@@ -1,0 +1,6 @@
+/* Keep fixed page chrome out of stitched component screenshots. */
+.masthead,
+.skip-link,
+.reading-progress {
+  visibility: hidden !important;
+}

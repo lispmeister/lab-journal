@@ -1,0 +1,224 @@
+
+> lab-journal@0.1.0 test
+> npm run validate:distribution && npm run validate:journal && npm run test:integrity && playwright test
+
+
+> lab-journal@0.1.0 validate:distribution
+> node scripts/check-distribution.mjs
+
+Distribution validation passed: 24 static starter files, zero live entries, no authoring toolchain.
+
+> lab-journal@0.1.0 validate:journal
+> node scripts/validate-lab-journal.mjs
+
+Lab journal validation passed: 14 live record, 3 entry/example plates, all indexes and offline dependencies intact.
+
+> lab-journal@0.1.0 test:integrity
+> node --test scripts/record-integrity.test.mjs
+
+✔ current full reference has complete identity; a removed operator fails (4.221792ms)
+✔ archive rejects duplicate stable IDs, incorrect counts and missing rows (0.4855ms)
+✔ fragments ignore fenced demonstrations and distinguish duplicate explicit IDs (0.735916ms)
+✔ validator rejects broken fragment links and rewritten signed history in an isolated copy (368.053209ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 420.099875
+
+Running 158 tests using 5 workers
+
+(node:9239) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9238) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9237) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    5 [firefox] › tests/print-control.spec.mjs:10:3 › /lab-journal/PLATE-TEMPLATE.html: print requests once, explains fallback and restores focus (1.4s)
+  ✓    2 [firefox] › tests/print-control.spec.mjs:10:3 › /docs/reviews/cambrian/journal-2026-04-04b.html: print requests once, explains fallback and restores focus (2.1s)
+  ✓    3 [firefox] › tests/print-control.spec.mjs:10:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: print requests once, explains fallback and restores focus (1.7s)
+  ✓    6 [firefox] › tests/print-control.spec.mjs:10:3 › /docs/reviews/cambrian/journal-2026-04-01c.html: print requests once, explains fallback and restores focus (1.4s)
+  -    8 [firefox] › tests/print-control.spec.mjs:44:1 › Chromium native print request reaches the print lifecycle
+  ✓    1 [firefox] › tests/print-control.spec.mjs:10:3 › /lab-journal/journal-2026-08-29-beautify-all-the-journals.html: print requests once, explains fallback and restores focus (2.3s)
+  ✓    9 [firefox] › tests/print-control.spec.mjs:55:1 › sample saved-PDF links return actual PDF files (833ms)
+  ✓    4 [firefox] › tests/print-control.spec.mjs:10:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: print requests once, explains fallback and restores focus (1.9s)
+  ✓    7 [firefox] › tests/print-control.spec.mjs:35:1 › missing or rejected native printing retains accessible instructions (1.6s)
+  ✓   14 [firefox] › tests/reader-tasks.spec.mjs:43:1 › author and multi-term searches find real records; print restores the archive (691ms)
+  ✓   13 [firefox] › tests/reader-tasks.spec.mjs:28:1 › stable references reveal observations, and correction notices survive every lens (1.0s)
+  ✓   15 [firefox] › tests/reader-tasks.spec.mjs:63:1 › research lenses lead to live ledgers, not specimens (680ms)
+  ✓   16 [firefox] › tests/reader-tasks.spec.mjs:73:1 › direct-file links and browser history reveal targets (684ms)
+  ✓   17 [firefox] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: published fragment links resolve uniquely (388ms)
+  ✓   18 [firefox] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: published fragment links resolve uniquely (396ms)
+  ✓   10 [firefox] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: every contents link works from every lens (3.3s)
+  ✓   19 [firefox] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/PLATE-TEMPLATE.html: published fragment links resolve uniquely (348ms)
+  ✓   20 [firefox] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: evidence labels remain readable across phone, desktop and print (653ms)
+  ✓   11 [firefox] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: every contents link works from every lens (3.1s)
+  ✓   22 [firefox] › tests/reader-tasks.spec.mjs:130:1 › long identity, raw evidence and artifact paths stay readable on a phone (517ms)
+  ✓   21 [firefox] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: evidence labels remain readable across phone, desktop and print (664ms)
+  ✓   12 [firefox] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/PLATE-TEMPLATE.html: every contents link works from every lens (3.3s)
+  ✓   24 [firefox] › tests/reader-tasks.spec.mjs:163:1 › aggregate fixtures account for every declared narrative group (602ms)
+  ✓   23 [firefox] › tests/reader-tasks.spec.mjs:147:1 › examples remain complete offline without JavaScript (651ms)
+  ✓   25 [firefox] › tests/real-content.spec.mjs:13:3 › journal-2026-04-03d: real source remains readable, contained and complete offline (917ms)
+(node:9361) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9362) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   27 [firefox] › tests/real-content.spec.mjs:13:3 › journal-2026-04-01c: real source remains readable, contained and complete offline (963ms)
+  ✓   26 [firefox] › tests/real-content.spec.mjs:13:3 › journal-2026-04-04b: real source remains readable, contained and complete offline (1.1s)
+(node:9377) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   29 [webkit] › tests/print-control.spec.mjs:10:3 › /lab-journal/journal-2026-08-29-beautify-all-the-journals.html: print requests once, explains fallback and restores focus (1.1s)
+  ✓   28 [webkit] › tests/print-control.spec.mjs:10:3 › /lab-journal/PLATE-TEMPLATE.html: print requests once, explains fallback and restores focus (1.1s)
+(node:9404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   30 [webkit] › tests/print-control.spec.mjs:10:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: print requests once, explains fallback and restores focus (1.1s)
+  ✓   31 [webkit] › tests/print-control.spec.mjs:10:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: print requests once, explains fallback and restores focus (1.0s)
+  -   35 [webkit] › tests/print-control.spec.mjs:44:1 › Chromium native print request reaches the print lifecycle
+  ✓   32 [webkit] › tests/print-control.spec.mjs:10:3 › /docs/reviews/cambrian/journal-2026-04-01c.html: print requests once, explains fallback and restores focus (816ms)
+  ✓   33 [webkit] › tests/print-control.spec.mjs:35:1 › missing or rejected native printing retains accessible instructions (1.3s)
+  ✓   36 [webkit] › tests/print-control.spec.mjs:55:1 › sample saved-PDF links return actual PDF files (854ms)
+  ✓   34 [webkit] › tests/print-control.spec.mjs:10:3 › /docs/reviews/cambrian/journal-2026-04-04b.html: print requests once, explains fallback and restores focus (1.4s)
+  ✓   41 [webkit] › tests/reader-tasks.spec.mjs:43:1 › author and multi-term searches find real records; print restores the archive (560ms)
+  ✓   40 [webkit] › tests/reader-tasks.spec.mjs:28:1 › stable references reveal observations, and correction notices survive every lens (863ms)
+  ✓   42 [webkit] › tests/reader-tasks.spec.mjs:63:1 › research lenses lead to live ledgers, not specimens (612ms)
+  ✓   43 [webkit] › tests/reader-tasks.spec.mjs:73:1 › direct-file links and browser history reveal targets (619ms)
+  ✓   44 [webkit] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: published fragment links resolve uniquely (350ms)
+  ✓   45 [webkit] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: published fragment links resolve uniquely (350ms)
+  ✓   38 [webkit] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: every contents link works from every lens (2.7s)
+  ✓   46 [webkit] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/PLATE-TEMPLATE.html: published fragment links resolve uniquely (334ms)
+  ✓   37 [webkit] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: every contents link works from every lens (3.0s)
+  ✓   47 [webkit] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: evidence labels remain readable across phone, desktop and print (617ms)
+  ✓   48 [webkit] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: evidence labels remain readable across phone, desktop and print (564ms)
+  ✓   49 [webkit] › tests/reader-tasks.spec.mjs:130:1 › long identity, raw evidence and artifact paths stay readable on a phone (391ms)
+  ✓   50 [webkit] › tests/reader-tasks.spec.mjs:147:1 › examples remain complete offline without JavaScript (525ms)
+  ✓   51 [webkit] › tests/reader-tasks.spec.mjs:163:1 › aggregate fixtures account for every declared narrative group (471ms)
+  ✓   52 [webkit] › tests/real-content.spec.mjs:13:3 › journal-2026-04-03d: real source remains readable, contained and complete offline (514ms)
+  ✓   39 [webkit] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/PLATE-TEMPLATE.html: every contents link works from every lens (3.5s)
+  ✓   53 [webkit] › tests/real-content.spec.mjs:13:3 › journal-2026-04-04b: real source remains readable, contained and complete offline (725ms)
+(node:9465) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9466) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9467) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   54 [webkit] › tests/real-content.spec.mjs:13:3 › journal-2026-04-01c: real source remains readable, contained and complete offline (1.0s)
+(node:9485) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   55 [chromium] › tests/accessibility.spec.mjs:26:5 › archive has no automated WCAG A/AA violations at mobile (809ms)
+  ✓   56 [chromium] › tests/accessibility.spec.mjs:26:5 › archive has no automated WCAG A/AA violations at desktop (839ms)
+  ✓   58 [chromium] › tests/accessibility.spec.mjs:26:5 › clean starter archive has no automated WCAG A/AA violations at desktop (641ms)
+  ✓   57 [chromium] › tests/accessibility.spec.mjs:26:5 › clean starter archive has no automated WCAG A/AA violations at mobile (682ms)
+  ✓   59 [chromium] › tests/accessibility.spec.mjs:26:5 › template has no automated WCAG A/AA violations at desktop (728ms)
+  ✓   61 [chromium] › tests/accessibility.spec.mjs:26:5 › live has no automated WCAG A/AA violations at mobile (832ms)
+  ✓   60 [chromium] › tests/accessibility.spec.mjs:26:5 › template has no automated WCAG A/AA violations at mobile (757ms)
+  ✓   62 [chromium] › tests/accessibility.spec.mjs:26:5 › live has no automated WCAG A/AA violations at desktop (851ms)
+  ✓   63 [chromium] › tests/accessibility.spec.mjs:26:5 › experiment has no automated WCAG A/AA violations at mobile (909ms)
+  ✓   64 [chromium] › tests/accessibility.spec.mjs:26:5 › experiment has no automated WCAG A/AA violations at desktop (881ms)
+  ✓   65 [chromium] › tests/accessibility.spec.mjs:26:5 › correction has no automated WCAG A/AA violations at mobile (803ms)
+  ✓   66 [chromium] › tests/accessibility.spec.mjs:26:5 › correction has no automated WCAG A/AA violations at desktop (877ms)
+  ✓   67 [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian campaign has no automated WCAG A/AA violations at mobile (889ms)
+  ✓   68 [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian campaign has no automated WCAG A/AA violations at desktop (867ms)
+  ✓   73 [chromium] › tests/distribution-browser.spec.mjs:11:3 › clean starter archive is usable at 320px (204ms)
+  ✓   74 [chromium] › tests/distribution-browser.spec.mjs:11:3 › clean starter archive is usable at 1440px (192ms)
+  ✓   72 [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian routine has no automated WCAG A/AA violations at desktop (560ms)
+  ✓   71 [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian routine has no automated WCAG A/AA violations at mobile (615ms)
+  ✓   75 [chromium] › tests/distribution-browser.spec.mjs:26:1 › clean starter opens directly from disk with local assets (209ms)
+  ✓   69 [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian diagnosis has no automated WCAG A/AA violations at mobile (943ms)
+  ✓   70 [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian diagnosis has no automated WCAG A/AA violations at desktop (903ms)
+  ✓   76 [chromium] › tests/interactions.spec.mjs:7:1 › archive search filters the catalog (272ms)
+  ✓   78 [chromium] › tests/interactions.spec.mjs:17:3 › clean starter archive mobile focus follows visual reading order (194ms)
+  ✓   77 [chromium] › tests/interactions.spec.mjs:17:3 › archive mobile focus follows visual reading order (313ms)
+  ✓   79 [chromium] › tests/interactions.spec.mjs:37:1 › every reading lens exposes only its declared layers (337ms)
+  ✓   80 [chromium] › tests/interactions.spec.mjs:63:1 › mobile evidence jump lands on the bench record (295ms)
+  ✓   82 [chromium] › tests/interactions.spec.mjs:83:1 › published pages request local resources only (232ms)
+  ✓   83 [chromium] › tests/interactions.spec.mjs:91:1 › record remains complete when JavaScript is disabled (216ms)
+  ✓   81 [chromium] › tests/interactions.spec.mjs:74:1 › wide evidence table is keyboard-focusable and scrollable (311ms)
+  ✓   85 [chromium] › tests/print-control.spec.mjs:10:3 › /lab-journal/journal-2026-08-29-beautify-all-the-journals.html: print requests once, explains fallback and restores focus (532ms)
+  ✓   88 [chromium] › tests/print-control.spec.mjs:10:3 › /docs/reviews/cambrian/journal-2026-04-04b.html: print requests once, explains fallback and restores focus (429ms)
+  ✓   86 [chromium] › tests/print-control.spec.mjs:10:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: print requests once, explains fallback and restores focus (486ms)
+  ✓   84 [chromium] › tests/print-control.spec.mjs:10:3 › /lab-journal/PLATE-TEMPLATE.html: print requests once, explains fallback and restores focus (557ms)
+  ✓   87 [chromium] › tests/print-control.spec.mjs:10:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: print requests once, explains fallback and restores focus (499ms)
+  ✓   91 [chromium] › tests/print-control.spec.mjs:44:1 › Chromium native print request reaches the print lifecycle (397ms)
+  ✓   92 [chromium] › tests/print-control.spec.mjs:55:1 › sample saved-PDF links return actual PDF files (431ms)
+  ✓   89 [chromium] › tests/print-control.spec.mjs:10:3 › /docs/reviews/cambrian/journal-2026-04-01c.html: print requests once, explains fallback and restores focus (581ms)
+  ✓   90 [chromium] › tests/print-control.spec.mjs:35:1 › missing or rejected native printing retains accessible instructions (947ms)
+  ✓   96 [chromium] › tests/reader-tasks.spec.mjs:28:1 › stable references reveal observations, and correction notices survive every lens (498ms)
+  ✓   97 [chromium] › tests/reader-tasks.spec.mjs:43:1 › author and multi-term searches find real records; print restores the archive (296ms)
+  ✓   98 [chromium] › tests/reader-tasks.spec.mjs:63:1 › research lenses lead to live ledgers, not specimens (361ms)
+  ✓   99 [chromium] › tests/reader-tasks.spec.mjs:73:1 › direct-file links and browser history reveal targets (336ms)
+  ✓  100 [chromium] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: published fragment links resolve uniquely (175ms)
+  ✓  101 [chromium] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: published fragment links resolve uniquely (199ms)
+  ✓  102 [chromium] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/PLATE-TEMPLATE.html: published fragment links resolve uniquely (158ms)
+  ✓   93 [chromium] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: every contents link works from every lens (2.0s)
+  ✓   94 [chromium] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: every contents link works from every lens (1.7s)
+  ✓  104 [chromium] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: evidence labels remain readable across phone, desktop and print (402ms)
+  ✓  103 [chromium] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: evidence labels remain readable across phone, desktop and print (411ms)
+  ✓  105 [chromium] › tests/reader-tasks.spec.mjs:130:1 › long identity, raw evidence and artifact paths stay readable on a phone (255ms)
+  ✓  106 [chromium] › tests/reader-tasks.spec.mjs:147:1 › examples remain complete offline without JavaScript (247ms)
+  ✓   95 [chromium] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/PLATE-TEMPLATE.html: every contents link works from every lens (2.0s)
+  ✓  107 [chromium] › tests/reader-tasks.spec.mjs:163:1 › aggregate fixtures account for every declared narrative group (330ms)
+  ✓  108 [chromium] › tests/real-content.spec.mjs:13:3 › journal-2026-04-03d: real source remains readable, contained and complete offline (333ms)
+  ✓  111 [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 320x700 (193ms)
+  ✓  109 [chromium] › tests/real-content.spec.mjs:13:3 › journal-2026-04-04b: real source remains readable, contained and complete offline (407ms)
+  ✓  114 [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 390x700 (175ms)
+  ✓  113 [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 375x700 (243ms)
+  ✓  112 [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 360x700 (253ms)
+  ✓  115 [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 430x700 (199ms)
+  ✓  110 [chromium] › tests/real-content.spec.mjs:13:3 › journal-2026-04-01c: real source remains readable, contained and complete offline (583ms)
+  ✓  116 [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 320x700 (302ms)
+  ✓  119 [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 390x700 (206ms)
+  ✓  117 [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 360x700 (291ms)
+  ✓  118 [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 375x700 (293ms)
+  ✓  120 [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 430x700 (178ms)
+  ✓  123 [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 320x700 (306ms)
+  ✓  124 [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 390x700 (307ms)
+  ✓  122 [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 375x700 (310ms)
+  ✓  121 [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 360x700 (316ms)
+  ✓  125 [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 430x700 (307ms)
+  ✓  126 [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 320x700 (308ms)
+  ✓  129 [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 390x700 (300ms)
+  ✓  128 [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 375x700 (308ms)
+  ✓  127 [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 360x700 (309ms)
+  ✓  130 [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 430x700 (306ms)
+  ✓  133 [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 360x700 (305ms)
+  ✓  132 [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 320x700 (306ms)
+  ✓  134 [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 390x700 (313ms)
+  ✓  135 [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 430x700 (311ms)
+  ✓  131 [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 375x700 (318ms)
+  ✓  136 [chromium] › tests/responsive.spec.mjs:100:5 › archive fits landscape viewport 667x375 (301ms)
+  ✓  140 [chromium] › tests/responsive.spec.mjs:100:5 › live fits landscape viewport 667x375 (286ms)
+  ✓  138 [chromium] › tests/responsive.spec.mjs:100:5 › template fits landscape viewport 667x375 (290ms)
+  ✓  139 [chromium] › tests/responsive.spec.mjs:100:5 › template fits landscape viewport 844x390 (292ms)
+  ✓  137 [chromium] › tests/responsive.spec.mjs:100:5 › archive fits landscape viewport 844x390 (308ms)
+  ✓  144 [chromium] › tests/responsive.spec.mjs:100:5 › correction fits landscape viewport 667x375 (294ms)
+  ✓  142 [chromium] › tests/responsive.spec.mjs:100:5 › experiment fits landscape viewport 844x390 (308ms)
+  ✓  145 [chromium] › tests/responsive.spec.mjs:100:5 › correction fits landscape viewport 844x390 (303ms)
+  ✓  141 [chromium] › tests/responsive.spec.mjs:100:5 › experiment fits landscape viewport 667x375 (310ms)
+  ✓  143 [chromium] › tests/responsive.spec.mjs:100:5 › live fits landscape viewport 844x390 (308ms)
+  ✓  147 [chromium] › tests/responsive.spec.mjs:111:3 › template preserves desktop contract (327ms)
+  ✓  148 [chromium] › tests/responsive.spec.mjs:111:3 › correction preserves desktop contract (329ms)
+  ✓  146 [chromium] › tests/responsive.spec.mjs:111:3 › archive preserves desktop contract (349ms)
+  ✓  150 [chromium] › tests/responsive.spec.mjs:111:3 › experiment preserves desktop contract (346ms)
+  ✓  149 [chromium] › tests/responsive.spec.mjs:111:3 › live preserves desktop contract (345ms)
+  ✓  152 [chromium] › tests/visual.spec.mjs:9:1 › archive mobile composition (345ms)
+  ✓  153 [chromium] › tests/visual.spec.mjs:14:1 › plate mobile identity composition (349ms)
+  ✓  154 [chromium] › tests/visual.spec.mjs:19:1 › mobile artifact table discloses contained scrolling (372ms)
+  ✓  151 [chromium] › tests/responsive.spec.mjs:128:1 › print restores the complete experiment record (406ms)
+  ✓  155 [chromium] › tests/visual.spec.mjs:25:1 › plate desktop composition (438ms)
+  ✓  158 [chromium] › tests/visual.spec.mjs:40:1 › template identity includes full provenance on mobile (230ms)
+  ✓  157 [chromium] › tests/visual.spec.mjs:35:1 › correction diagram presents the changed boundary (288ms)
+  ✓  156 [chromium] › tests/visual.spec.mjs:30:1 › mobile experiment diagrams retain readable evidence (298ms)
+
+  2 skipped
+  156 passed (25.5s)

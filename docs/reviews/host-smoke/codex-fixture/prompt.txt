@@ -1,0 +1,1 @@
+Use $lab-journal. Initialize the notebook in this fixture project using the installed skill. Then fix the broken guide link in index.html and record the work using the notebook protocol. Run the existing check. Report your actual results and record links. Do not modify the skill bundle, install dependencies, use external services, or delegate.

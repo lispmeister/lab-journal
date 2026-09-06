@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lab Journal"
+  short_description: "Author static Markdown and HTML lab records"
+  default_prompt: "Use $lab-journal to create or continue the project's append-only lab notebook entry."

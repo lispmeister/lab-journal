@@ -1,0 +1,7 @@
+run,implementation,ack_observed,close_after_ack,elapsed_ms
+1,immediate-stop,false,false,3.1
+2,immediate-stop,false,false,2.8
+3,immediate-stop,false,false,3.0
+4,deferred-stop,true,true,4.2
+5,deferred-stop,true,true,4.1
+6,deferred-stop,true,true,4.3

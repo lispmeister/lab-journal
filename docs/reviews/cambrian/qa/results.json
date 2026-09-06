@@ -1,0 +1,228 @@
+[
+  {
+    "name": "journal-2026-04-03d",
+    "dimensions": [
+      {
+        "width": 390,
+        "pageWidth": 390,
+        "height": 3650,
+        "pre": [],
+        "tables": [
+          {
+            "width": 334,
+            "scroll": 629
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "pageWidth": 1440,
+        "height": 2401,
+        "pre": [],
+        "tables": [
+          {
+            "width": 927,
+            "scroll": 927
+          }
+        ]
+      }
+    ],
+    "brokenNavigation": [],
+    "pageErrors": [],
+    "fencedCodePreserved": true,
+    "sourceSha256": "d950ed6a7554f8cd62f3795800b36b9b10f143b1d6d62f65a944f4ff59cb6d0e",
+    "noJsHiddenSections": []
+  },
+  {
+    "name": "journal-2026-04-04b",
+    "dimensions": [
+      {
+        "width": 390,
+        "pageWidth": 507,
+        "height": 7085,
+        "pre": [
+          {
+            "width": 336,
+            "scroll": 336
+          },
+          {
+            "width": 336,
+            "scroll": 480
+          }
+        ],
+        "tables": [
+          {
+            "width": 334,
+            "scroll": 334
+          },
+          {
+            "width": 334,
+            "scroll": 432
+          },
+          {
+            "width": 334,
+            "scroll": 334
+          },
+          {
+            "width": 334,
+            "scroll": 482
+          },
+          {
+            "width": 334,
+            "scroll": 630
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "pageWidth": 1440,
+        "height": 4712,
+        "pre": [
+          {
+            "width": 929,
+            "scroll": 929
+          },
+          {
+            "width": 929,
+            "scroll": 929
+          }
+        ],
+        "tables": [
+          {
+            "width": 927,
+            "scroll": 927
+          },
+          {
+            "width": 927,
+            "scroll": 927
+          },
+          {
+            "width": 927,
+            "scroll": 927
+          },
+          {
+            "width": 927,
+            "scroll": 927
+          },
+          {
+            "width": 927,
+            "scroll": 927
+          }
+        ]
+      }
+    ],
+    "brokenNavigation": [],
+    "pageErrors": [],
+    "fencedCodePreserved": true,
+    "sourceSha256": "c389f43890f8b80fef568a4e79dff180da700983d6eac8de922b7388cc087d8e",
+    "noJsHiddenSections": []
+  },
+  {
+    "name": "journal-2026-04-01c",
+    "dimensions": [
+      {
+        "width": 390,
+        "pageWidth": 818,
+        "height": 10590,
+        "pre": [
+          {
+            "width": 336,
+            "scroll": 534
+          },
+          {
+            "width": 336,
+            "scroll": 432
+          },
+          {
+            "width": 336,
+            "scroll": 336
+          },
+          {
+            "width": 336,
+            "scroll": 791
+          },
+          {
+            "width": 336,
+            "scroll": 336
+          },
+          {
+            "width": 336,
+            "scroll": 404
+          }
+        ],
+        "tables": [
+          {
+            "width": 334,
+            "scroll": 334
+          },
+          {
+            "width": 334,
+            "scroll": 334
+          },
+          {
+            "width": 334,
+            "scroll": 351
+          },
+          {
+            "width": 334,
+            "scroll": 615
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "pageWidth": 1440,
+        "height": 6406,
+        "pre": [
+          {
+            "width": 929,
+            "scroll": 929
+          },
+          {
+            "width": 929,
+            "scroll": 929
+          },
+          {
+            "width": 929,
+            "scroll": 929
+          },
+          {
+            "width": 929,
+            "scroll": 929
+          },
+          {
+            "width": 929,
+            "scroll": 929
+          },
+          {
+            "width": 929,
+            "scroll": 929
+          }
+        ],
+        "tables": [
+          {
+            "width": 927,
+            "scroll": 927
+          },
+          {
+            "width": 927,
+            "scroll": 927
+          },
+          {
+            "width": 927,
+            "scroll": 927
+          },
+          {
+            "width": 927,
+            "scroll": 927
+          }
+        ]
+      }
+    ],
+    "brokenNavigation": [],
+    "pageErrors": [],
+    "fencedCodePreserved": true,
+    "sourceSha256": "8078ccfc5a781cd13d9181183d742a000e5ffb6afbddb1af05f283d2502e6fea",
+    "noJsHiddenSections": []
+  }
+]

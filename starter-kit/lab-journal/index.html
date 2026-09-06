@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A clean, static, Markdown-first laboratory notebook with optional rich HTML plates.">
+  <title>Lab Journal — Master Index</title>
+  <link rel="stylesheet" href="assets/notebook.css?v=6">
+  <script src="assets/notebook.js?v=2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Skip to notebook index</a>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">LJ</span><span>Lab Journal · Master Notebook</span></a>
+      <nav class="topnav" aria-label="Notebook utilities">
+        <a href="COMPACT-TEMPLATE.md">Compact template</a><a href="TEMPLATE.md">Full template</a>
+        <a href="AUTHORING.md">Authoring protocol</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="archive-shell">
+    <header class="archive-hero">
+      <span class="catalog-kicker">Markdown first · HTML when it clarifies · local forever</span>
+      <h1>The record remembers changing minds.</h1>
+      <p>Bench fragments preserve what happened. Markdown carries the durable narrative. Optional HTML plates reveal chronology, uncertainty, provenance, and correction—without requiring a server.</p>
+      <div class="archive-stats" aria-label="Notebook statistics">
+        <div class="archive-stat"><strong>000</strong><span>Live records</span></div>
+        <div class="archive-stat"><strong>000</strong><span>Live plates</span></div>
+        <div class="archive-stat"><strong>100%</strong><span>Markdown source</span></div>
+        <div class="archive-stat"><strong>000</strong><span>Open questions</span></div>
+      </div>
+    </header>
+
+    <div class="catalog-tools">
+      <div><span class="catalog-kicker">Master index · newest first</span><h2 id="catalog">Chronological record</h2></div>
+      <label class="search-wrap"><span class="skip-link">Filter entries</span><input data-catalog-search type="search" placeholder="Filter ID, topic, person, question…" aria-label="Filter notebook entries"></label>
+    </div>
+
+    <section class="catalog" aria-label="Lab notebook entries">
+      <div class="catalog-header" aria-hidden="true"><span>Date / ID</span><span>Entry</span><span>Phase</span><span>Available forms</span></div>
+      <!-- Add newest catalog-row articles here. Always link Markdown; link HTML only when it exists. -->
+      <aside class="archive-note">
+        <strong>No live entries yet</strong>
+        <span>Create canonical Markdown from <a href="TEMPLATE.md">TEMPLATE.md</a> and follow <a href="AUTHORING.md">AUTHORING.md</a>. The agent updates this index directly.</span>
+      </aside>
+      <div class="empty-search" role="status">No entries match that filter.</div>
+    </section>
+
+    <section class="research-index" aria-label="Live research index">
+      <h2 id="people">People and roles</h2><p>No live authors or witnesses yet.</p>
+      <h2 id="systems">Systems</h2><p>No live systems yet.</p>
+      <h2 id="questions">Open questions</h2><p>No live questions yet.</p>
+      <h2 id="corrections">Corrections</h2><p>No live corrections yet.</p>
+      <!-- Maintain these live lists alongside each catalog row. Use data-search on
+           rows for author, system, question and correction IDs. Keep specimens separate. -->
+    </section>
+    <aside class="archive-note">
+      <strong>Authoring references and historical specimens</strong>
+      <span><a href="examples/2026-08-30-reply-before-close.html">Layered experiment</a> · <a href="examples/2026-09-04-timeout-was-witness.html">Append-only correction</a>. <a href="examples/2026-09-06-routine-link-fix.md">Compact Markdown-only repair</a>. Their people, dates, commands, and measurements are examples, not project history.</span>
+    </aside>
+    <aside class="archive-note">
+      <strong>Current full-format reference</strong>
+      <span><a href="examples/2026-09-06-instrumentation-scope-correction.md">Scope correction with complete identity, evidence, ownership and closure</a>. Follow this reference for new full records; the older pair retains historical wording with dated amendments.</span>
+    </aside>
+    <aside class="archive-note">
+      <strong>Local by construction</strong>
+      <span>No server, package install, web font, CDN, or network request is required. JavaScript only enhances search and reading lenses; printing restores the complete record.</span>
+    </aside>
+  </main>
+</body>
+</html>

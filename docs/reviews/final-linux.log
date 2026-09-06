@@ -1,0 +1,169 @@
+
+added 5 packages, and audited 6 packages in 1s
+
+found 0 vulnerabilities
+
+> lab-journal@0.1.0 test
+> npm run validate:distribution && npm run validate:journal && npm run test:integrity && playwright test
+
+
+> lab-journal@0.1.0 validate:distribution
+> node scripts/check-distribution.mjs
+
+Distribution validation passed: 24 static starter files, zero live entries, no authoring toolchain.
+
+> lab-journal@0.1.0 validate:journal
+> node scripts/validate-lab-journal.mjs
+
+Lab journal validation passed: 13 live record, 3 entry/example plates, all indexes and offline dependencies intact.
+
+> lab-journal@0.1.0 test:integrity
+> node --test scripts/record-integrity.test.mjs
+
+✔ current full reference has complete identity; a removed operator fails (5.277542ms)
+✔ archive rejects duplicate stable IDs, incorrect counts and missing rows (0.797833ms)
+✔ fragments ignore fenced demonstrations and distinguish duplicate explicit IDs (0.870542ms)
+✔ validator rejects broken fragment links and rewritten signed history in an isolated copy (556.351ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 603.837
+
+Running 131 tests using 5 workers
+
+[1/131] [firefox] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: every contents link works from every lens
+[2/131] [firefox] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/PLATE-TEMPLATE.html: every contents link works from every lens
+[3/131] [firefox] › tests/reader-tasks.spec.mjs:28:1 › stable references reveal observations, and correction notices survive every lens
+[4/131] [firefox] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: every contents link works from every lens
+[5/131] [firefox] › tests/reader-tasks.spec.mjs:43:1 › author and multi-term searches find real records; print restores the archive
+[6/131] [firefox] › tests/reader-tasks.spec.mjs:63:1 › research lenses lead to live ledgers, not specimens
+[7/131] [firefox] › tests/reader-tasks.spec.mjs:73:1 › direct-file links and browser history reveal targets
+[8/131] [firefox] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: published fragment links resolve uniquely
+[9/131] [firefox] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: published fragment links resolve uniquely
+[10/131] [firefox] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/PLATE-TEMPLATE.html: published fragment links resolve uniquely
+[11/131] [firefox] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: evidence labels remain readable across phone, desktop and print
+[12/131] [firefox] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: evidence labels remain readable across phone, desktop and print
+[13/131] [firefox] › tests/reader-tasks.spec.mjs:130:1 › long identity, raw evidence and artifact paths stay readable on a phone
+[14/131] [firefox] › tests/reader-tasks.spec.mjs:147:1 › examples remain complete offline without JavaScript
+[15/131] [firefox] › tests/reader-tasks.spec.mjs:163:1 › aggregate fixtures account for every declared narrative group
+[16/131] [firefox] › tests/real-content.spec.mjs:13:3 › journal-2026-04-03d: real source remains readable, contained and complete offline
+[17/131] [firefox] › tests/real-content.spec.mjs:13:3 › journal-2026-04-04b: real source remains readable, contained and complete offline
+[18/131] [firefox] › tests/real-content.spec.mjs:13:3 › journal-2026-04-01c: real source remains readable, contained and complete offline
+[19/131] [webkit] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: every contents link works from every lens
+[20/131] [webkit] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/PLATE-TEMPLATE.html: every contents link works from every lens
+[21/131] [webkit] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: every contents link works from every lens
+[22/131] [webkit] › tests/reader-tasks.spec.mjs:28:1 › stable references reveal observations, and correction notices survive every lens
+[23/131] [webkit] › tests/reader-tasks.spec.mjs:43:1 › author and multi-term searches find real records; print restores the archive
+[24/131] [webkit] › tests/reader-tasks.spec.mjs:63:1 › research lenses lead to live ledgers, not specimens
+[25/131] [webkit] › tests/reader-tasks.spec.mjs:73:1 › direct-file links and browser history reveal targets
+[26/131] [webkit] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: published fragment links resolve uniquely
+[27/131] [webkit] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: published fragment links resolve uniquely
+[28/131] [webkit] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/PLATE-TEMPLATE.html: published fragment links resolve uniquely
+[29/131] [webkit] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: evidence labels remain readable across phone, desktop and print
+[30/131] [webkit] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: evidence labels remain readable across phone, desktop and print
+[31/131] [webkit] › tests/reader-tasks.spec.mjs:130:1 › long identity, raw evidence and artifact paths stay readable on a phone
+[32/131] [webkit] › tests/reader-tasks.spec.mjs:147:1 › examples remain complete offline without JavaScript
+[33/131] [webkit] › tests/reader-tasks.spec.mjs:163:1 › aggregate fixtures account for every declared narrative group
+[34/131] [webkit] › tests/real-content.spec.mjs:13:3 › journal-2026-04-03d: real source remains readable, contained and complete offline
+[35/131] [webkit] › tests/real-content.spec.mjs:13:3 › journal-2026-04-04b: real source remains readable, contained and complete offline
+[36/131] [webkit] › tests/real-content.spec.mjs:13:3 › journal-2026-04-01c: real source remains readable, contained and complete offline
+[37/131] [chromium] › tests/accessibility.spec.mjs:26:5 › archive has no automated WCAG A/AA violations at mobile
+[38/131] [chromium] › tests/accessibility.spec.mjs:26:5 › archive has no automated WCAG A/AA violations at desktop
+[39/131] [chromium] › tests/accessibility.spec.mjs:26:5 › clean starter archive has no automated WCAG A/AA violations at mobile
+[40/131] [chromium] › tests/accessibility.spec.mjs:26:5 › clean starter archive has no automated WCAG A/AA violations at desktop
+[41/131] [chromium] › tests/accessibility.spec.mjs:26:5 › template has no automated WCAG A/AA violations at mobile
+[42/131] [chromium] › tests/accessibility.spec.mjs:26:5 › template has no automated WCAG A/AA violations at desktop
+[43/131] [chromium] › tests/accessibility.spec.mjs:26:5 › live has no automated WCAG A/AA violations at mobile
+[44/131] [chromium] › tests/accessibility.spec.mjs:26:5 › live has no automated WCAG A/AA violations at desktop
+[45/131] [chromium] › tests/accessibility.spec.mjs:26:5 › experiment has no automated WCAG A/AA violations at mobile
+[46/131] [chromium] › tests/accessibility.spec.mjs:26:5 › experiment has no automated WCAG A/AA violations at desktop
+[47/131] [chromium] › tests/accessibility.spec.mjs:26:5 › correction has no automated WCAG A/AA violations at mobile
+[48/131] [chromium] › tests/accessibility.spec.mjs:26:5 › correction has no automated WCAG A/AA violations at desktop
+[49/131] [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian campaign has no automated WCAG A/AA violations at mobile
+[50/131] [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian campaign has no automated WCAG A/AA violations at desktop
+[51/131] [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian diagnosis has no automated WCAG A/AA violations at mobile
+[52/131] [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian routine has no automated WCAG A/AA violations at mobile
+[53/131] [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian routine has no automated WCAG A/AA violations at desktop
+[54/131] [chromium] › tests/accessibility.spec.mjs:26:5 › Cambrian diagnosis has no automated WCAG A/AA violations at desktop
+[55/131] [chromium] › tests/distribution-browser.spec.mjs:11:3 › clean starter archive is usable at 1440px
+[56/131] [chromium] › tests/distribution-browser.spec.mjs:26:1 › clean starter opens directly from disk with local assets
+[57/131] [chromium] › tests/distribution-browser.spec.mjs:11:3 › clean starter archive is usable at 320px
+[58/131] [chromium] › tests/interactions.spec.mjs:7:1 › archive search filters the catalog
+[59/131] [chromium] › tests/interactions.spec.mjs:17:3 › archive mobile focus follows visual reading order
+[60/131] [chromium] › tests/interactions.spec.mjs:17:3 › clean starter archive mobile focus follows visual reading order
+[61/131] [chromium] › tests/interactions.spec.mjs:37:1 › every reading lens exposes only its declared layers
+[62/131] [chromium] › tests/interactions.spec.mjs:63:1 › mobile evidence jump lands on the bench record
+[63/131] [chromium] › tests/interactions.spec.mjs:74:1 › wide evidence table is keyboard-focusable and scrollable
+[64/131] [chromium] › tests/interactions.spec.mjs:83:1 › published pages request local resources only
+[65/131] [chromium] › tests/interactions.spec.mjs:91:1 › record remains complete when JavaScript is disabled
+[66/131] [chromium] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: every contents link works from every lens
+[67/131] [chromium] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: every contents link works from every lens
+[68/131] [chromium] › tests/reader-tasks.spec.mjs:11:3 › /lab-journal/PLATE-TEMPLATE.html: every contents link works from every lens
+[69/131] [chromium] › tests/reader-tasks.spec.mjs:28:1 › stable references reveal observations, and correction notices survive every lens
+[70/131] [chromium] › tests/reader-tasks.spec.mjs:43:1 › author and multi-term searches find real records; print restores the archive
+[71/131] [chromium] › tests/reader-tasks.spec.mjs:63:1 › research lenses lead to live ledgers, not specimens
+[72/131] [chromium] › tests/reader-tasks.spec.mjs:73:1 › direct-file links and browser history reveal targets
+[73/131] [chromium] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: published fragment links resolve uniquely
+[74/131] [chromium] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: published fragment links resolve uniquely
+[75/131] [chromium] › tests/reader-tasks.spec.mjs:86:3 › /lab-journal/PLATE-TEMPLATE.html: published fragment links resolve uniquely
+[76/131] [chromium] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-08-30-reply-before-close.html: evidence labels remain readable across phone, desktop and print
+[77/131] [chromium] › tests/reader-tasks.spec.mjs:99:3 › /lab-journal/examples/2026-09-04-timeout-was-witness.html: evidence labels remain readable across phone, desktop and print
+[78/131] [chromium] › tests/reader-tasks.spec.mjs:130:1 › long identity, raw evidence and artifact paths stay readable on a phone
+[79/131] [chromium] › tests/reader-tasks.spec.mjs:147:1 › examples remain complete offline without JavaScript
+[80/131] [chromium] › tests/reader-tasks.spec.mjs:163:1 › aggregate fixtures account for every declared narrative group
+[81/131] [chromium] › tests/real-content.spec.mjs:13:3 › journal-2026-04-03d: real source remains readable, contained and complete offline
+[82/131] [chromium] › tests/real-content.spec.mjs:13:3 › journal-2026-04-04b: real source remains readable, contained and complete offline
+[83/131] [chromium] › tests/real-content.spec.mjs:13:3 › journal-2026-04-01c: real source remains readable, contained and complete offline
+[84/131] [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 320x700
+[85/131] [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 360x700
+[86/131] [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 375x700
+[87/131] [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 390x700
+[88/131] [chromium] › tests/responsive.spec.mjs:67:5 › archive satisfies portrait contract at 430x700
+[89/131] [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 320x700
+[90/131] [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 360x700
+[91/131] [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 375x700
+[92/131] [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 390x700
+[93/131] [chromium] › tests/responsive.spec.mjs:67:5 › template satisfies portrait contract at 430x700
+[94/131] [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 320x700
+[95/131] [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 360x700
+[96/131] [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 375x700
+[97/131] [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 390x700
+[98/131] [chromium] › tests/responsive.spec.mjs:67:5 › live satisfies portrait contract at 430x700
+[99/131] [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 320x700
+[100/131] [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 360x700
+[101/131] [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 375x700
+[102/131] [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 390x700
+[103/131] [chromium] › tests/responsive.spec.mjs:67:5 › experiment satisfies portrait contract at 430x700
+[104/131] [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 320x700
+[105/131] [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 360x700
+[106/131] [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 375x700
+[107/131] [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 390x700
+[108/131] [chromium] › tests/responsive.spec.mjs:67:5 › correction satisfies portrait contract at 430x700
+[109/131] [chromium] › tests/responsive.spec.mjs:100:5 › archive fits landscape viewport 667x375
+[110/131] [chromium] › tests/responsive.spec.mjs:100:5 › archive fits landscape viewport 844x390
+[111/131] [chromium] › tests/responsive.spec.mjs:100:5 › template fits landscape viewport 667x375
+[112/131] [chromium] › tests/responsive.spec.mjs:100:5 › template fits landscape viewport 844x390
+[113/131] [chromium] › tests/responsive.spec.mjs:100:5 › live fits landscape viewport 667x375
+[114/131] [chromium] › tests/responsive.spec.mjs:100:5 › live fits landscape viewport 844x390
+[115/131] [chromium] › tests/responsive.spec.mjs:100:5 › experiment fits landscape viewport 667x375
+[116/131] [chromium] › tests/responsive.spec.mjs:100:5 › experiment fits landscape viewport 844x390
+[117/131] [chromium] › tests/responsive.spec.mjs:100:5 › correction fits landscape viewport 667x375
+[118/131] [chromium] › tests/responsive.spec.mjs:100:5 › correction fits landscape viewport 844x390
+[119/131] [chromium] › tests/responsive.spec.mjs:111:3 › archive preserves desktop contract
+[120/131] [chromium] › tests/responsive.spec.mjs:111:3 › template preserves desktop contract
+[121/131] [chromium] › tests/responsive.spec.mjs:111:3 › live preserves desktop contract
+[122/131] [chromium] › tests/responsive.spec.mjs:111:3 › experiment preserves desktop contract
+[123/131] [chromium] › tests/responsive.spec.mjs:111:3 › correction preserves desktop contract
+[124/131] [chromium] › tests/responsive.spec.mjs:128:1 › print restores the complete experiment record
+[125/131] [chromium] › tests/visual.spec.mjs:9:1 › archive mobile composition
+[126/131] [chromium] › tests/visual.spec.mjs:14:1 › plate mobile identity composition
+[127/131] [chromium] › tests/visual.spec.mjs:19:1 › mobile artifact table discloses contained scrolling
+[128/131] [chromium] › tests/visual.spec.mjs:25:1 › plate desktop composition
+[129/131] [chromium] › tests/visual.spec.mjs:30:1 › mobile experiment diagrams retain readable evidence
+[130/131] [chromium] › tests/visual.spec.mjs:35:1 › correction diagram presents the changed boundary
+[131/131] [chromium] › tests/visual.spec.mjs:40:1 › template identity includes full provenance on mobile
+  131 passed (35.4s)
